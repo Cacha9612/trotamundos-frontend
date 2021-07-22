@@ -1,16 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatSliderModule } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { PdvComponent } from './pdv/pdv.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ProductosComponent } from './productos/productos.component';
+import {FormsModule} from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {DemoMaterialModule} from './material-module';
 
 @NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
-    AppComponent
+    AppComponent,
+    BarraLateralComponent,
+    PdvComponent,
+    ClientesComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    FormsModule,
+    DemoMaterialModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
