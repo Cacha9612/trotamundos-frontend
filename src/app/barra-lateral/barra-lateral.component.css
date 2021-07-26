@@ -4,7 +4,7 @@
 
 .sidenav {
   height: 100%;
-  width: 150px;
+  width: 185px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -29,4 +29,11 @@
   color: rgb(0, 0, 0);
   border-bottom-style: solid;
   border-bottom-color: #000;
+}
+
+.greek-font {
+  font-family: 'Durant';
+  font-weight:normal;
+  font-style:normal;
+  font-size: 150%;
 }

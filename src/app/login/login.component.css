@@ -1,0 +1,22 @@
+.main-div mat-card {
+    padding: 0%;
+}
+.login-form {
+    padding: 20px;
+}
+.greek-font {
+    font-family: 'Durant';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 150%;
+}
+.title-center {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+span {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}

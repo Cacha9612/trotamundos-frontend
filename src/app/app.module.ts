@@ -17,6 +17,10 @@ import { ProductosComponent } from './productos/productos.component';
 import {FormsModule} from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {DemoMaterialModule} from './material-module';
+import { LoginComponent } from './login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms'; // <== add the imports!
 
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -25,9 +29,11 @@ import {DemoMaterialModule} from './material-module';
     BarraLateralComponent,
     PdvComponent,
     ClientesComponent,
-    ProductosComponent
+    ProductosComponent,
+    LoginComponent
   ],
   imports: [
+    FlexLayoutModule ,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -40,7 +46,9 @@ import {DemoMaterialModule} from './material-module';
     MatListModule,
     FormsModule,
     DemoMaterialModule,
-    
+    BrowserModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
