@@ -14,14 +14,16 @@ import { MatListModule } from '@angular/material/list';
 import { PdvComponent } from './pdv/pdv.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ProductosComponent } from './productos/productos.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {DemoMaterialModule} from './material-module';
+import { DemoMaterialModule } from './material-module';
 import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'; // <== add the imports!
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
@@ -30,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms'; // <== add the imports!
     PdvComponent,
     ClientesComponent,
     ProductosComponent,
-    LoginComponent
+    LoginComponent,
+    SidenavbarComponent
   ],
   imports: [
     FlexLayoutModule ,
@@ -48,7 +51,9 @@ import { ReactiveFormsModule } from '@angular/forms'; // <== add the imports!
     DemoMaterialModule,
     BrowserModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

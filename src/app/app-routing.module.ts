@@ -5,13 +5,15 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { LoginComponent } from './login/login.component';
 import { PdvComponent } from './pdv/pdv.component';
 import { ProductosComponent } from './productos/productos.component';
+import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'pdv',component:PdvComponent},
   {path:'productos',component:ProductosComponent},
   {path:'clientes',component:ClientesComponent},
-  {path:'barra-lateral',component:BarraLateralComponent}
+  {path:'barra-lateral',component:BarraLateralComponent},
+  {path:'sidenavbar', component:SidenavbarComponent}
 ];
 
 @NgModule({

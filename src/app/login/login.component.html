@@ -1,14 +1,15 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="25">
+    <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
+    <mat-card fxFlex="25" *ngIf="!loading">
         <mat-toolbar><span><p class="greek-font">Medusa</p></span></mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+        <form  [formGroup]="form" (ngSubmit)="ingresar()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
             <mat-form-field>
-                <input matInput placeholder="Usuario" required>
+                <input matInput autocomplete="off" placeholder="Usuario" required formControlName="usuario">
             </mat-form-field>
             <mat-form-field>
-                <input  matInput type="password" placeholder="Contraseña" required>
+                <input  matInput autocomplete="off" type="password" placeholder="Contraseña" required formControlName="password">
             </mat-form-field>
-        <button color="basic" mat-raised-button type="submit" routerLink="/barra-lateral">Aceptar</button>
+        <button color="basic" mat-raised-button type="submit" [disabled]="form.invalid">Aceptar</button>
         </form>
     </mat-card>
 </div>
