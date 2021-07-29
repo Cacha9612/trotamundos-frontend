@@ -24,7 +24,8 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     FlexLayoutModule,
@@ -33,7 +34,12 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    DashboardModule
+    DashboardModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    DemoMaterialModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

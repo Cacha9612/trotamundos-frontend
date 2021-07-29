@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   fakeloading(){
     this.loading = true;
     setTimeout(() =>{
-      this.router.navigate(['/sidenavbar']);
+      this.router.navigate(['/dashboard']);
     }, 1500)
   }
 }

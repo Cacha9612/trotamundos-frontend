@@ -41,7 +41,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatListModule,
     DemoMaterialModule,
     BrowserModule,
-    CommonModule,
     ReactiveFormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
