@@ -18,6 +18,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { NavbarComponent } from './components/sidenavbar/navbar/navbar.component';
+import { SidebarComponent } from './components/sidenavbar/sidebar/sidebar.component';
 
 
 
@@ -29,6 +31,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     ClientesComponent,
     ProductosComponent,
     SidenavbarComponent,
+    SidebarComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +50,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatProgressSpinnerModule,
     DashboardRoutingModule,
     FormsModule
-  ]
+  ],
+  providers: [],
+
 })
 export class DashboardModule { }
