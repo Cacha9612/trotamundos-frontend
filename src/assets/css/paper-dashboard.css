@@ -14,6 +14,8 @@
 
  */
 /*      light colors - used for select dropdown         */
+@import "../../../node_modules/angular-calendar/css/angular-calendar.css";
+
 .ct-blue {
   stroke: #7A9E9F !important;
 }
