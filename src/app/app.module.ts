@@ -16,7 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
@@ -38,6 +38,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     MatListModule,
     MatIconModule,
     CommonModule ,
+    HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
