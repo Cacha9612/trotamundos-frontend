@@ -5,7 +5,7 @@ import { ClientesComponent } from './components/sidenavbar/clientes/clientes.com
 import { PdvComponent } from './components/sidenavbar/pdv/pdv.component';
 import { ProductosComponent } from './components/sidenavbar/productos/productos.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
-
+import { AgendaComponent } from './components/sidenavbar/agenda/agenda.component';
 const routes: Routes = [
   {
     path: 'dashboard', component: SidenavbarComponent, children: [
@@ -13,6 +13,8 @@ const routes: Routes = [
       { path: 'productos', component: ProductosComponent },
       { path: 'clientes', component: ClientesComponent },
       { path: 'barra-lateral', component: BarraLateralComponent },
+      { path: 'agenda', component: AgendaComponent },
+
     ]
   },
 ];
