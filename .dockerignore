@@ -1,2 +1,4 @@
 **.lock.json
 **.lock
+.git/
+node_modules/

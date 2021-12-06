@@ -2,7 +2,7 @@ FROM node:14.17 as builder
 WORKDIR /usr/src/app/
 COPY . .
 RUN yarn
-RUN npm run build
+RUN npm run build --prod
 
 FROM nginx as final 
 RUN rm /etc/nginx/conf.d/default.conf
