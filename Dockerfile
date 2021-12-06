@@ -1,9 +1,11 @@
-FROM node:14.17
-
-WORKDIR /usr/src/app
+FROM node:14.17 as builder
+WORKDIR /usr/src/app/
 COPY . .
-RUN npm install -g @angular/cli
-RUN yarn install
-EXPOSE 4200
+RUN yarn
+RUN npm run build
 
-CMD [ "ng", "serve" ]
+FROM nginx as final 
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d/
+RUN mkdir /usr/src/dist/
+COPY --from=builder /usr/src/app/dist/ /usr/src/dist/
