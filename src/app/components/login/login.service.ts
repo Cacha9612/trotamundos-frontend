@@ -6,7 +6,7 @@ import { DatosLogin } from 'src/app/Models/loginmodel';
   providedIn: 'root'
 })
 export class LoginService {
-  private url = 'http://127.0.0.1:8000/seguridad/iniciarsesion'
+  private url = 'http://0.0.0.0:5080/seguridad/iniciarsesion'
   constructor(
     private http: HttpClient
   ) { }
