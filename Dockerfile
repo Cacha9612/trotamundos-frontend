@@ -1,10 +1,12 @@
-FROM node:14.17.0-alpine as build-step
-RUN mkdir -p /app
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
+FROM node:14.17 as builder
+WORKDIR /usr/src/app/
+COPY . .
+RUN yarn
 RUN npm run build --prod
-FROM nginx:1.20.1
-COPY --from=build-step /app/dist/medusa /usr/share/nginx/html
+
+FROM nginx as final 
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d/
+RUN mkdir /usr/src/dist/
+COPY --from=builder /usr/src/app/dist/ /usr/src/dist/
 EXPOSE 80:80
