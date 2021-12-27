@@ -6,21 +6,31 @@ import { PdvComponent } from './components/sidenavbar/pdv/pdv.component';
 import { ProductosComponent } from './components/sidenavbar/productos/productos.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { AgendaComponent } from './components/sidenavbar/agenda/agenda.component';
+import { AdminGuard } from '../../admin.guard';
+import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
 const routes: Routes = [
   {
-    path: 'dashboard', component: SidenavbarComponent, children: [
+    path: 'dashboard',
+    canActivate: [AdminGuard],
+    component: SidenavbarComponent,
+    children: [
       { path: 'pdv', component: PdvComponent },
       { path: 'productos', component: ProductosComponent },
       { path: 'clientes', component: ClientesComponent },
       { path: 'barra-lateral', component: BarraLateralComponent },
       { path: 'agenda', component: AgendaComponent },
-
-    ]
+    ],
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

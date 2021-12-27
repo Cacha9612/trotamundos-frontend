@@ -1,17 +1,44 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ModeleoDeRespuesta } from 'src/app/Models/responsemodel';
+import { AccessToken } from 'src/app/Models/responsemodel';
 import { DatosLogin } from 'src/app/Models/loginmodel';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-  private url = 'http://127.0.0.1:8000/seguridad/iniciarsesion'
-  constructor(
-    private http: HttpClient
-  ) { }
+  authSubject = new BehaviorSubject(false);
+  private token: any;
+  private url = 'http://3.227.190.242:5080/seguridad/iniciarsesion';
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
 
-  iniciodesesion(data: DatosLogin){
-    return this.http.post<ModeleoDeRespuesta>(this.url, data);
+  iniciodesesion(data: DatosLogin): Observable<AccessToken> {
+    return this.http.post<AccessToken>(this.url, data).pipe(
+      tap((res: AccessToken) => {
+        if (res) {
+          this.SaveToken(res.access_token, res.token_type)
+        }
+      })
+    );
   }
+  private SaveToken(token: string, expiresIn: string): void {
+    localStorage.setItem('ACCESS_TOKEN', token);
+    this.token = token;
+  }
+
+  private getToken(): string {
+    if (!this.token) {
+      this.token = localStorage.getItem("ACCESS_TOKEN");
+    }
+    return this.token;
+  }
+  public isAuthenticated(): boolean {
+    const tokenn = localStorage.getItem('ACCESS_TOKEN') || '{}';
+    return !this.jwtHelper.isTokenExpired(tokenn);
+  }
+
+  
 }
