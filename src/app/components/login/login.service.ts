@@ -25,7 +25,7 @@ export class LoginService {
     );
   }
   private SaveToken(token: string, expiresIn: string): void {
-    localStorage.setItem('ACCESS_TOKEN', token);
+    // localStorage.setItem('ACCESS_TOKEN', token);
     this.token = token;
   }
 
@@ -36,8 +36,14 @@ export class LoginService {
     return this.token;
   }
   public isAuthenticated(): boolean {
-    const tokenn = localStorage.getItem('ACCESS_TOKEN') || '{}';
-    return !this.jwtHelper.isTokenExpired(tokenn);
+    // const tokenn = localStorage.getItem('ACCESS_TOKEN') || '{}';
+    // return !this.jwtHelper.isTokenExpired(tokenn);
+    if (!this.token){
+      return false
+    }
+    else {
+      return true
+    }
   }
 
   

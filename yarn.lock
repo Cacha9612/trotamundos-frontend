@@ -1726,6 +1726,11 @@
     "@mattlewis92/dom-autoscroller" "^2.4.2"
     "tslib" "^1.9.0"
 
+"angular-jwt@^0.1.11":
+  "integrity" "sha512-793dv5vXOXaW5/cweMd+sqSf9dPhbazDya3szTVOQ84MDEj1nYLJrixBBa7WNtZeMqz7ylWX7djnFgqLjEWcHw=="
+  "resolved" "https://registry.npmjs.org/angular-jwt/-/angular-jwt-0.1.11.tgz"
+  "version" "0.1.11"
+
 "angular-resizable-element@^3.4.0":
   "integrity" "sha512-xL5a8FmghzrZmHPy7uwWz98m91gRXgAcdeCRYcK/nD7psXMTYNk5EPmHA0qZTDCIYljhT4h0OKWLvx56NQGfDA=="
   "resolved" "https://registry.npmjs.org/angular-resizable-element/-/angular-resizable-element-3.4.0.tgz"
