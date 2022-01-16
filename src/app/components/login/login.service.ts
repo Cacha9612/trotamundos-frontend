@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginService {
   authSubject = new BehaviorSubject(false);
   private token: any;
-  private url = 'http://3.227.190.242:5080/seguridad/iniciarsesion';
+  private url = 'https://api.medusalashes.com.mx/seguridad/iniciarsesion';
   constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
 
   iniciodesesion(data: DatosLogin): Observable<AccessToken> {
