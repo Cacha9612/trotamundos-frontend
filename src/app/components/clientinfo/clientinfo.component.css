@@ -1,0 +1,43 @@
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.sizeimg2 {
+    height: 50px;
+    width: 250px;
+    padding-top: 10px;
+}
+
+.sizeimg {
+    height: 70px;
+    width: 70px;
+    margin-left: 2%;
+    float: left;
+    margin-top: 10px;
+}
+
+.greek-font {
+    font-family: 'Durant';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 150%;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    padding: 1%;
+}
+
+h2 {
+    margin: 0px;
+    margin-top: 22px;
+    padding-left: 150px;
+}

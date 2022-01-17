@@ -20,12 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginService } from './components/login/login.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ClientinfoComponent } from './components/clientinfo/clientinfo.component';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
+    ClientinfoComponent,
     
   ],
   imports: [
