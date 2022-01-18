@@ -21,13 +21,17 @@
 </div>
 
 <div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=1 class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=2 class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=3 class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=4 class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=5 class="dot"></div>
+  <div (click)="showVisitInfo($event)" id=6 class="dot"></div>
 </div>
+<div id="dato1" style="height: 50px; width: 50px;" class="ocultar">
+    <p>{{infoVisita}}</p>
+</div>
+
 <div class="fixed-button">
   <a href="https://m.facebook.com/MedusaLasshess/">
     <button type="button" class="btn btn-primary btn-lg btn-floating">
@@ -53,3 +57,4 @@
     </button>
   </a>
 </div>
+
