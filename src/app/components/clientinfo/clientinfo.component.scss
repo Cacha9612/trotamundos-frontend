@@ -5,8 +5,8 @@
     border-radius: 50%;
     display: inline-block;
     border-style: solid;
-    margin-right: 10px;
-    margin-left: 5px;
+    margin-left: 1vw;
+    margin-right: 3vw;
 }
 
 .sizeimg2 {
@@ -40,4 +40,19 @@ h2 {
     margin: 0px;
     margin-top: 22px;
     padding-left: 150px;
+}
+
+.btn-lg{
+  height: 50px;
+  width: 50px;
+  font-size: 15pt;
+}
+.fixed-button{
+  position:fixed;
+  bottom: 2vh;
+  justify-content: space-evenly;
+}
+.btn-primary{
+  margin-left: 15vw;
+  margin-right: 0vw;
 }

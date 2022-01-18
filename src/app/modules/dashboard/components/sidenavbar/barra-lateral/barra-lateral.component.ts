@@ -6,7 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 @Component({
   selector: 'app-barra-lateral',
   templateUrl: './barra-lateral.component.html',
-  styleUrls: ['./barra-lateral.component.css']
+  styleUrls: ['./barra-lateral.component.scss']
 })
 export class BarraLateralComponent {
 

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-clientinfo',
   templateUrl: './clientinfo.component.html',
-  styleUrls: ['./clientinfo.component.css']
+  styleUrls: ['./clientinfo.component.scss']
 })
 export class ClientinfoComponent implements OnInit {
 

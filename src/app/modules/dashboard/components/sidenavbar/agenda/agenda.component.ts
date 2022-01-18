@@ -42,7 +42,7 @@ const colors: any = {
   selector: 'app-agenda',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './agenda.component.html',
-  styleUrls: ['./agenda.component.css']
+  styleUrls: ['./agenda.component.scss']
 })
 export class AgendaComponent {
   @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
