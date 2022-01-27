@@ -27,7 +27,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import 'flatpickr/dist/flatpickr.css'; // you may need to adjust the css import depending on your build tool
 import { Ng2FlatpickrModule } from 'ng2-flatpickr';
-
 @NgModule({
   declarations: [
     BarraLateralComponent,

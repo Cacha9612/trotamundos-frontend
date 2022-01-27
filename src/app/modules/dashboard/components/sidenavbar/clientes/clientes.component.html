@@ -1,0 +1,31 @@
+<div>
+    <h2>Guardar cliente</h2>
+</div>
+
+<div class="example-container" style="margin-left: 50px; margin-top: 50px">
+    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente" />
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+        <span matPrefix>@&nbsp;</span>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
+        <mat-label>Nombre Completo</mat-label>
+        <input matInput type="text" class="example-right-align" placeholder="Nombre completo del cliente" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
+        <mat-label>Edad</mat-label>
+        <input matInput type="text" class="example-right-align" placeholder="Edad del cliente" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
+        <mat-label>Fecha Nacimiento</mat-label>
+        <input matInput type="date" class="example-right-align" placeholder="Fecha nacimiento del cliente" />
+    </mat-form-field>
+    <br>
+    <input style="display: none;" hidden #fileInput type="file" id="file">
+    <button style="width: 350px;" type="button" mat-raised-button (click)="fileInput.click()">Seleccionar archivo</button>
+</div>

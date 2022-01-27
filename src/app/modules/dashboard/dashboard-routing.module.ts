@@ -9,6 +9,7 @@ import { AgendaComponent } from './components/sidenavbar/agenda/agenda.component
 import { AdminGuard } from '../../admin.guard';
 import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { PromocionesComponent } from './components/sidenavbar/promociones/promociones.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'clientes', component: ClientesComponent },
       { path: 'barra-lateral', component: BarraLateralComponent },
       { path: 'agenda', component: AgendaComponent },
+      { path: 'promociones', component: PromocionesComponent}
     ],
   },
   {

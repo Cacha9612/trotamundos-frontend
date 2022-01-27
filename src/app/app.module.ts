@@ -21,6 +21,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginService } from './components/login/login.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { ClientinfoComponent } from './components/clientinfo/clientinfo.component';
+import { PromocionesComponent } from './modules/dashboard/components/sidenavbar/promociones/promociones.component';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
@@ -28,6 +29,7 @@ import { ClientinfoComponent } from './components/clientinfo/clientinfo.componen
     LoginComponent,
     PageNotFoundComponent,
     ClientinfoComponent,
+    PromocionesComponent,
     
   ],
   imports: [
