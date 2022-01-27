@@ -123,7 +123,7 @@
     "ora" "5.4.1"
     "rxjs" "6.6.7"
 
-"@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@>=6.0.0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
+"@angular/animations@^12.0.0", "@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@>=6.0.0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
   "integrity" "sha512-t17n8RuzkY7lYawmI01WuNWf70ttvEPknmS3sh7q2IAsBdRiLQCBmh6Hw5q0SBaQNoRWNIcUWKBwl4EmyXOtrA=="
   "resolved" "https://registry.npmjs.org/@angular/animations/-/animations-12.1.5.tgz"
   "version" "12.1.5"
@@ -1224,6 +1224,11 @@
   "integrity" "sha512-Fxt+AfXgjMoin2maPIYzFZnQjAXjAL0PHscM5pRTtatFqB+vZxAM9tLp2Optnuw3QOQC40jTNeGYFOMvyf7v9g=="
   "resolved" "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.3.tgz"
   "version" "0.5.3"
+
+"@fortawesome/fontawesome-free@^5.15.1":
+  "integrity" "sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz"
+  "version" "5.15.4"
 
 "@gar/promisify@^1.0.1":
   "integrity" "sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw=="
@@ -3191,9 +3196,9 @@
     "base64-arraybuffer" "0.1.4"
 
 "engine.io@~4.1.0":
-  "integrity" "sha512-t2E9wLlssQjGw0nluF6aYyfX8LwYU8Jj0xct+pAhfWfv/YrBn6TSNtEYsgxHIfaMqfrLx07czcMg9bMN6di+3w=="
-  "resolved" "https://registry.npmjs.org/engine.io/-/engine.io-4.1.1.tgz"
-  "version" "4.1.1"
+  "integrity" "sha512-t5z6zjXuVLhXDMiFJPYsPOWEER8B0tIsD3ETgw19S1yg9zryvUfY3Vhtk3Gf4sihw/bQGIqQ//gjvVlu+Ca0bQ=="
+  "resolved" "https://registry.npmjs.org/engine.io/-/engine.io-4.1.2.tgz"
+  "version" "4.1.2"
   dependencies:
     "accepts" "~1.3.4"
     "base64id" "2.0.0"
@@ -3569,9 +3574,9 @@
   "version" "1.0.3"
 
 "follow-redirects@^1.0.0":
-  "integrity" "sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g=="
-  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.4.tgz"
-  "version" "1.14.4"
+  "integrity" "sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.7.tgz"
+  "version" "1.14.7"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
@@ -4881,6 +4886,13 @@
   "version" "1.0.0"
   dependencies:
     "object-visit" "^1.0.0"
+
+"mdb-angular-ui-kit@^1.6.0":
+  "integrity" "sha512-RFTj/C+xiCC/PwqFEcU+UtWrkq/8s9XVfKuvBNvIYSNSZl5Y672v8dTR0UK7TmpIxGu+AIgAP9emw8Ho3GhG1g=="
+  "resolved" "https://registry.npmjs.org/mdb-angular-ui-kit/-/mdb-angular-ui-kit-1.6.0.tgz"
+  "version" "1.6.0"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "mdn-data@2.0.14":
   "integrity" "sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow=="
@@ -6945,9 +6957,9 @@
   "version" "2.0.0"
 
 "selfsigned@^1.10.8":
-  "integrity" "sha512-aVmbPOfViZqOZPgRBT0+3u4yZFHpmnIghLMlAcb5/xhp5ZtB/RVnKhz5vl2M32CLXAqR4kha9zfhNg0Lf/sxKA=="
-  "resolved" "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.11.tgz"
-  "version" "1.10.11"
+  "integrity" "sha512-lkjaiAye+wBZDCBsu5BGi0XiLRxeUlsGod5ZP924CRSEoGuZAw/f7y9RKu28rwTfiHVhdavhB0qH0INV6P1lEA=="
+  "resolved" "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.14.tgz"
+  "version" "1.10.14"
   dependencies:
     "node-forge" "^0.10.0"
 
