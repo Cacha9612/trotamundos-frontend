@@ -123,7 +123,7 @@
     "ora" "5.4.1"
     "rxjs" "6.6.7"
 
-"@angular/animations@^12.0.0", "@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@>=6.0.0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
+"@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@>=6.0.0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
   "integrity" "sha512-t17n8RuzkY7lYawmI01WuNWf70ttvEPknmS3sh7q2IAsBdRiLQCBmh6Hw5q0SBaQNoRWNIcUWKBwl4EmyXOtrA=="
   "resolved" "https://registry.npmjs.org/@angular/animations/-/animations-12.1.5.tgz"
   "version" "12.1.5"
@@ -4886,13 +4886,6 @@
   "version" "1.0.0"
   dependencies:
     "object-visit" "^1.0.0"
-
-"mdb-angular-ui-kit@^1.6.0":
-  "integrity" "sha512-RFTj/C+xiCC/PwqFEcU+UtWrkq/8s9XVfKuvBNvIYSNSZl5Y672v8dTR0UK7TmpIxGu+AIgAP9emw8Ho3GhG1g=="
-  "resolved" "https://registry.npmjs.org/mdb-angular-ui-kit/-/mdb-angular-ui-kit-1.6.0.tgz"
-  "version" "1.6.0"
-  dependencies:
-    "tslib" "^2.0.0"
 
 "mdn-data@2.0.14":
   "integrity" "sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow=="

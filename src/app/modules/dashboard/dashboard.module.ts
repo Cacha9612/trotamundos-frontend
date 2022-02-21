@@ -5,6 +5,7 @@ import { ClientesComponent } from './components/sidenavbar/clientes/clientes.com
 import { ProductosComponent } from './components/sidenavbar/productos/productos.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { AgendaComponent } from './components/sidenavbar/agenda/agenda.component';
+import { PromocionesComponent } from './components/sidenavbar/promociones/promociones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -27,6 +28,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import 'flatpickr/dist/flatpickr.css'; // you may need to adjust the css import depending on your build tool
 import { Ng2FlatpickrModule } from 'ng2-flatpickr';
+
 @NgModule({
   declarations: [
     BarraLateralComponent,
@@ -37,6 +39,7 @@ import { Ng2FlatpickrModule } from 'ng2-flatpickr';
     SidebarComponent,
     NavbarComponent,
     AgendaComponent,
+    PromocionesComponent
   ],
   imports: [
     CommonModule,

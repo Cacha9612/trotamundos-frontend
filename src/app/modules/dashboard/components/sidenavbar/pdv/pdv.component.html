@@ -1,1 +1,12 @@
-<h1 style="margin-top: 10%;">gf</h1>
+<form [formGroup]="profileForm">
+    <div class="example-container" style="margin-left: 50px; margin-top: 50px">
+        <mat-form-field appearance="fill" style="width: 350px;">
+            <mat-label>Usuario</mat-label>
+            <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente" formControlName="nombreUsuario" />
+            <span matPrefix>@&nbsp;</span>
+        </mat-form-field>
+        <button (click)="buscarCliente()" style="width: 250px; margin-left: 10px;" type="button" mat-raised-button>
+                Buscar Cliente
+        </button>
+    </div>
+</form>

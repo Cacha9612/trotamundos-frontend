@@ -1,31 +1,51 @@
-<div>
-    <h2>Guardar cliente</h2>
-</div>
+<mat-tab-group>
+    <mat-tab label="Guardar Cliente">
+        <form [formGroup]="profileForm">
+            <div class="example-container" style="margin-left: 50px; margin-top: 50px">
+                <mat-form-field appearance="fill" style="width: 350px">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente " formControlName="nombreUsuario" />
+                    <span matPrefix>@&nbsp;</span>
+                </mat-form-field>
+                <br />
+                <mat-form-field appearance="fill" style="width: 350px">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input matInput type="text" class="example-right-align" placeholder="Nombre completo del cliente" formControlName="nombreCompleto" />
+                </mat-form-field>
 
-<div class="example-container" style="margin-left: 50px; margin-top: 50px">
-    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
-        <mat-label>Usuario</mat-label>
-        <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente" />
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
-        <span matPrefix>@&nbsp;</span>
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
-        <mat-label>Nombre Completo</mat-label>
-        <input matInput type="text" class="example-right-align" placeholder="Nombre completo del cliente" />
-    </mat-form-field>
-    <br />
-    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
-        <mat-label>Edad</mat-label>
-        <input matInput type="text" class="example-right-align" placeholder="Edad del cliente" />
-    </mat-form-field>
-    <br />
+                <br />
+                <mat-form-field appearance="fill" style="width: 350px">
+                    <mat-label>Codigo QR</mat-label>
+                    <input matInput type="text" class="example-right-align" placeholder="Codigo QR del Cliente" formControlName="codigoQr" />
+                </mat-form-field>
+                <br />
 
-    <mat-form-field appearance="fill" floatLabel="always" style="width: 350px">
-        <mat-label>Fecha Nacimiento</mat-label>
-        <input matInput type="date" class="example-right-align" placeholder="Fecha nacimiento del cliente" />
-    </mat-form-field>
-    <br>
-    <input style="display: none;" hidden #fileInput type="file" id="file">
-    <button style="width: 350px;" type="button" mat-raised-button (click)="fileInput.click()">Seleccionar archivo</button>
-</div>
+                <mat-form-field appearance="fill" style="width: 350px">
+                    <mat-label>Edad</mat-label>
+                    <input matInput type="text" class="example-right-align" placeholder="Edad del cliente" formControlName="edad" />
+                </mat-form-field>
+                <br />
+
+                <mat-form-field appearance="fill" style="width: 350px">
+                    <mat-label>Fecha Nacimiento</mat-label>
+                    <input matInput type="date" class="example-right-align" placeholder="Fecha nacimiento del cliente" formControlName="fechaNacimiento" />
+                </mat-form-field>
+                <br />
+
+                <input style="display: none" hidden #fileInput type="file" id="file" />
+                <button style="width: 350px" type="button" mat-raised-button (click)="fileInput.click()">
+                Seleccionar archivo
+              </button>
+                <br/>
+                <br>
+                <button style="width: 350px" type="button" mat-raised-button (click)="guardarCliente()">
+                Guardar Cliente
+              </button>
+            </div>
+        </form>
+
+    </mat-tab>
+    <mat-tab label="Editar Cliente">
+
+    </mat-tab>
+</mat-tab-group>
