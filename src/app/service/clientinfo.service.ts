@@ -9,7 +9,6 @@ import { LoginService } from '../components/login/login.service';
   providedIn: 'root'
 })
 export class ClientinfoService {
-  private token: any;
   private url = 'https://api.medusalashes.com.mx/clientes';
   headers = {};
   
@@ -19,10 +18,10 @@ export class ClientinfoService {
 
    getToken(){
      const token = this.LoginService.getToken();
-     this.headers = { 'Authorization': `Bearer ${this.token}`};
+     this.headers = { 'Authorization': `Bearer ${token}`};
    }
    guardarCliente(data: ClienteModel ): Observable<ModeleoDeRespuesta>  {
-    console.log("peticion a api")
+    this.getToken()
     this.headers 
     return this.http.post<ModeleoDeRespuesta>(this.url+'/guardarcliente', data , {headers: this.headers});
   }
