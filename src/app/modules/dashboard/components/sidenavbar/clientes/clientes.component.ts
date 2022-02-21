@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./clientes.component.scss']
 })
 export class ClientesComponent implements OnInit {
+  [x: string]: any;
   
 
   constructor(
@@ -28,7 +29,6 @@ export class ClientesComponent implements OnInit {
   ngOnInit(): void {
   }
   guardarCliente(){    
-    console.log(this.profileForm.value)
     const data: ClienteModel = {
       nombrecompleto: this.profileForm.get('nombreCompleto')!.value,
       nombreusuario: this.profileForm.get('nombreUsuario')!.value,
@@ -39,6 +39,8 @@ export class ClientesComponent implements OnInit {
     this.ClienteService.guardarCliente(data)
     .subscribe(ModeleoDeRespuesta  => {
       this.mensajeRespuesta(ModeleoDeRespuesta.Respuesta)
+    }, response => {
+      this.mensajeRespuesta(response.error.Respuesta)
     })
   }
   mensajeRespuesta(Respuesta: string) {
