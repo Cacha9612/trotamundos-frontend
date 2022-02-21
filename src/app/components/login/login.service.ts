@@ -29,10 +29,7 @@ export class LoginService {
     this.token = token;
   }
 
-  private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem("ACCESS_TOKEN");
-    }
+  getToken(): string {
     return this.token;
   }
   public isAuthenticated(): boolean {
