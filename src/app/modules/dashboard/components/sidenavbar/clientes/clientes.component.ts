@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientinfoService } from '../../../../../service/clientinfo.service'
-import { ClienteModel } from '../../../../../Models/clientemodel'
+import { ClienteModel, ClientesInfo } from '../../../../../Models/clientemodel'
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+const ELEMENT_DATA: ClientesInfo[] = []
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -12,7 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ClientesComponent implements OnInit {
   [x: string]: any;
   
-
+  displayedColumns: string[] = ['id_cliente', 'nombre_usuario', 'nombre_completo', 'edad'
+  ,'fecha_registro', 'fecha_nacimiento', 'email', 'tel', 'estatus'];
+  dataSource = ELEMENT_DATA;
   constructor(
     private _snackBar: MatSnackBar,
     private ClienteService: ClientinfoService) {
@@ -23,10 +26,15 @@ export class ClientesComponent implements OnInit {
     nombreCompleto: new FormControl(''),
     codigoQr: new FormControl(''),
     edad: new FormControl(''),
-    fechaNacimiento: new FormControl('')
+    fechaNacimiento: new FormControl(''),
+    email: new FormControl(''),
+    tel: new FormControl('')
   });
 
   ngOnInit(): void {
+    this.ClienteService.getclientes().subscribe(data => {
+      this.dataSource = data;
+    })
   }
   guardarCliente(){    
     const data: ClienteModel = {
@@ -34,7 +42,9 @@ export class ClientesComponent implements OnInit {
       nombreusuario: this.profileForm.get('nombreUsuario')!.value,
       codigoQr: this.profileForm.get('codigoQr')!.value,
       fechanacimiento: this.profileForm.get('fechaNacimiento')!.value,
-      edad: this.profileForm.get('edad')!.value
+      edad: this.profileForm.get('edad')!.value,
+      email: this.profileForm.get('email')!.value,
+      tel: this.profileForm.get('tel')!.value
     }
     this.ClienteService.guardarCliente(data)
     .subscribe(ModeleoDeRespuesta  => {

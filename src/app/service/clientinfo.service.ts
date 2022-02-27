@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ModeleoDeRespuesta } from '../Models/responsemodel'
-import { ClienteModel } from '../Models/clientemodel'
+import { ClienteModel, PromocionModel, ClientesInfo } from '../Models/clientemodel'
 import { Observable } from 'rxjs';
 import { LoginService } from '../components/login/login.service';
 
@@ -25,4 +25,16 @@ export class ClientinfoService {
     this.headers 
     return this.http.post<ModeleoDeRespuesta>(this.url+'/guardarcliente', data , {headers: this.headers});
   }
+  getpromociones(): Observable<PromocionModel[]> {
+    this.getToken()
+    this.headers
+    return this.http.get<PromocionModel[]>('https://api.medusalashes.com.mx'+'/promocion?id_estatus=0', {headers: this.headers})
+  }
+
+  getclientes(): Observable<ClientesInfo[]> {
+    this.getToken()
+    this.headers
+    return this.http.get<ClientesInfo[]>(this.url, {headers: this.headers})
+  }
+
 }
