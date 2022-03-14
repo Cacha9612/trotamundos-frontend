@@ -37,4 +37,10 @@ export class ClientinfoService {
     return this.http.get<ClientesInfo[]>(this.url, {headers: this.headers})
   }
 
+  getCliente(Usuario: string): Observable<ClientesInfo[]> {
+    this.getToken()
+    this.headers
+    return this.http.get<ClientesInfo[]>(`http://127.0.0.1:8000/clientes/getcliente?usuariocliente=${Usuario}`, {headers: this.headers})
+  }
+
 }
