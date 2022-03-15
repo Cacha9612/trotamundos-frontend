@@ -1,16 +1,42 @@
 <form [formGroup]="profileForm">
-    <div class="example-container" style="margin-left: 50px;">
-        <mat-form-field appearance="fill" style="width: 350px;">
-            <mat-label>Usuario</mat-label>
-            <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente" formControlName="nombreUsuario" />
-            <span matPrefix>@&nbsp;</span>
-        </mat-form-field>
-        <button (click)="buscarCliente()" style="width: 250px; margin-left: 10px;" type="button" mat-raised-button>
-                Buscar Cliente
-        </button>
-    </div>
+  <div class="example-container">
+    <mat-form-field appearance="fill" style="width: 350px;" >
+      <mat-label>Usuario</mat-label>
+      <input
+        matInput
+        type="text"
+        class="example-right-align"
+        placeholder="Usuario de instagram del cliente"
+        formControlName="nombreUsuario"
+      
+      />
+      <span matPrefix>@&nbsp;</span>
+    </mat-form-field>
+    <button
+      (click)="buscarCliente()"
+      style="width: 250px; margin-left: 10px; height: 35px;"
+      type="button"
+      mat-raised-button
+    >
+      Buscar Cliente
+    </button>
 
-    <div style=" visibility: hidden;" id="Lista">
+    <mat-card class="example-card" style="float:right; margin-right:50px; visibility:hidden;" id="ProfileData">
+        <mat-card-title style="text-align: center;">Cliente: @{{dataSource.nombre_usuario}}</mat-card-title>
+        <mat-card-content>
+          <p><strong>Nombre: </strong>{{dataSource.nombre_completo}}</p> <br>
+          <p><strong>Correo: </strong>{{dataSource.email}}</p> <br>
+          <p><strong>Edad: </strong>{{dataSource.edad}}</p> <br>
+          <p><strong>Fecha Registro: </strong>{{dataSource.fecha_registro}}</p> <br>
+          <p><strong>Telefono: </strong>{{dataSource.tel}} </p> <br>
+        </mat-card-content>
+      </mat-card>
+  </div>
+  <div style="float: right;">
+   
+  </div>
+  
+  <!-- <div style=" visibility: hidden;" id="Lista">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="nombre_usuario">
@@ -47,5 +73,5 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-    </div>
+    </div> -->
 </form>

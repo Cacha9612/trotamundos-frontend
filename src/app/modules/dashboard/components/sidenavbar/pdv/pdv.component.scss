@@ -1,8 +1,16 @@
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .main-panel > .content {
-    padding: 15px 10px;
-    min-height: calc(100% - 123px);
+  padding: 15px 10px;
+  min-height: calc(100% - 123px);
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
 }
