@@ -14,8 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <== add th
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
@@ -45,7 +43,6 @@ import { ClientinfoComponent } from './components/clientinfo/clientinfo.componen
     MatIconModule,
     CommonModule ,
     HttpClientModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [ {provide: JWT_OPTIONS, useValue: JWT_OPTIONS}, JwtHelperService],
   bootstrap: [AppComponent]

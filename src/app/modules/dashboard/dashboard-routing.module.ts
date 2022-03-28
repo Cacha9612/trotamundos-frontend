@@ -5,7 +5,6 @@ import { ClientesComponent } from './components/sidenavbar/clientes/clientes.com
 import { PdvComponent } from './components/sidenavbar/pdv/pdv.component';
 import { ProductosComponent } from './components/sidenavbar/productos/productos.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
-import { AgendaComponent } from './components/sidenavbar/agenda/agenda.component';
 import { AdminGuard } from '../../admin.guard';
 import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -21,7 +20,6 @@ const routes: Routes = [
       { path: 'productos', component: ProductosComponent },
       { path: 'clientes', component: ClientesComponent },
       { path: 'barra-lateral', component: BarraLateralComponent },
-      { path: 'agenda', component: AgendaComponent },
       { path: 'promociones', component: PromocionesComponent}
     ],
   },

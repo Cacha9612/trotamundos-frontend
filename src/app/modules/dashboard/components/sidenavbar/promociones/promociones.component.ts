@@ -19,7 +19,6 @@ export class PromocionesComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getpromociones().subscribe(data =>{
-      console.log(data)
       this.dataSource = data;
     })
   }

@@ -1,6 +1,6 @@
 <form [formGroup]="profileForm">
   <div class="example-container">
-    <mat-form-field appearance="fill" style="width: 350px;" >
+    <mat-form-field appearance="fill" style="width: 350px">
       <mat-label>Usuario</mat-label>
       <input
         matInput
@@ -8,70 +8,104 @@
         class="example-right-align"
         placeholder="Usuario de instagram del cliente"
         formControlName="nombreUsuario"
-      
       />
       <span matPrefix>@&nbsp;</span>
     </mat-form-field>
     <button
       (click)="buscarCliente()"
-      style="width: 250px; margin-left: 10px; height: 35px;"
+      style="width: 250px; margin-left: 10px; height: 35px"
       type="button"
       mat-raised-button
     >
       Buscar Cliente
     </button>
-
-    <mat-card class="example-card" style="float:right; margin-right:50px; visibility:hidden;" id="ProfileData">
-        <mat-card-title style="text-align: center;">Cliente: @{{dataSource.nombre_usuario}}</mat-card-title>
-        <mat-card-content>
-          <p><strong>Nombre: </strong>{{dataSource.nombre_completo}}</p> <br>
-          <p><strong>Correo: </strong>{{dataSource.email}}</p> <br>
-          <p><strong>Edad: </strong>{{dataSource.edad}}</p> <br>
-          <p><strong>Fecha Registro: </strong>{{dataSource.fecha_registro}}</p> <br>
-          <p><strong>Telefono: </strong>{{dataSource.tel}} </p> <br>
-        </mat-card-content>
-      </mat-card>
+    <mat-card
+      class="example-card"
+      style="float: right; margin-right: 50px; visibility: hidden"
+      id="ProfileData"
+    >
+      <mat-card-title style="text-align: center"
+        >Cliente: @{{ dataSource.nombre_usuario }}</mat-card-title
+      >
+      <mat-card-content>
+        <p><strong>Nombre: </strong>{{ dataSource.nombre_completo }}</p>
+        <br />
+        <p><strong>Correo: </strong>{{ dataSource.email }}</p>
+        <br />
+        <p><strong>Edad: </strong>{{ dataSource.edad }}</p>
+        <br />
+        <p><strong>Fecha Registro: </strong>{{ dataSource.fecha_registro }}</p>
+        <br />
+        <p><strong>Telefono: </strong>{{ dataSource.tel }}</p>
+        <br />
+      </mat-card-content>
+    </mat-card>
+    <br />
+    <mat-form-field appearance="fill" style="width: 350px">
+      <mat-label>Fecha Visita</mat-label>
+      <input
+        matInput
+        type="date"
+        class="example-right-align"
+        placeholder="Fecha visita"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field
+      class="example-full-width"
+      appearance="fill"
+      style="width: 350px"
+    >
+      <mat-label>Quien Atiende</mat-label>
+      <input
+        type="text"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option 
+        *ngFor="let option of filteredOptions | async"[value]="option">{{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 600px">
+      <mat-label>Comentarios</mat-label>
+      <input
+        matInput
+        type="text"
+        class="example-right-align"
+        placeholder="Comentarios"
+      />
+      <span matPrefix>&nbsp;</span>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 600px">
+      <mat-label>Servicios</mat-label>
+      <input
+        matInput
+        type="text"
+        class="example-right-align"
+        placeholder="Servicios que se realizaron"
+      />
+      <span matPrefix>&nbsp;</span>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 350px">
+      <mat-label>Promoción</mat-label>
+      <mat-select>
+        <mat-option value="one" *ngFor="let option of filteredOptions | async"[value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 350px">
+      <mat-label>Monto total cobrado</mat-label>
+      <input matInput type="number" class="example-right-align" placeholder="0">
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
   </div>
-  <div style="float: right;">
-   
-  </div>
-  
-  <!-- <div style=" visibility: hidden;" id="Lista">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-            <ng-container matColumnDef="nombre_usuario">
-                <th mat-header-cell *matHeaderCellDef> Usuario de Instagram </th>
-                <td mat-cell *matCellDef="let element"> {{element.nombre_usuario}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="nombre_completo">
-                <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
-                <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="fecha_registro">
-                <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
-                <td mat-cell *matCellDef="let element"> {{element.fecha_registro}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="fecha_nacimiento">
-                <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
-                <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef> Correo </th>
-                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="tel">
-                <th mat-header-cell *matHeaderCellDef> Telefono </th>
-                <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
-            </ng-container>
-
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </div> -->
+  <div style="float: right"></div>
 </form>

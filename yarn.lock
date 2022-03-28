@@ -123,7 +123,7 @@
     "ora" "5.4.1"
     "rxjs" "6.6.7"
 
-"@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@>=6.0.0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
+"@angular/animations@^12.0.0 || ^13.0.0-0", "@angular/animations@~12.1.2", "@angular/animations@12.1.5":
   "integrity" "sha512-t17n8RuzkY7lYawmI01WuNWf70ttvEPknmS3sh7q2IAsBdRiLQCBmh6Hw5q0SBaQNoRWNIcUWKBwl4EmyXOtrA=="
   "resolved" "https://registry.npmjs.org/@angular/animations/-/animations-12.1.5.tgz"
   "version" "12.1.5"
@@ -164,7 +164,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@>=12.0.0", "@angular/common@>=6.0.0", "@angular/common@>=9.0.0", "@angular/common@~12.1.2", "@angular/common@12.1.5":
+"@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@>=12.0.0", "@angular/common@>=9.0.0", "@angular/common@~12.1.2", "@angular/common@12.1.5":
   "integrity" "sha512-xs33eMhV79S85nbH5FVmujKY3OoczloW9oOGRe5tCzxsDDv85hadrB8Mbm3qI5WQ99DNk8M2+P0MW6uiyCAWkQ=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-12.1.5.tgz"
   "version" "12.1.5"
@@ -198,7 +198,7 @@
   dependencies:
     "tslib" "^2.2.0"
 
-"@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@>=12.0.0", "@angular/core@>=5.0.0", "@angular/core@>=6.0.0", "@angular/core@~12.1.2", "@angular/core@12.1.5":
+"@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@>=12.0.0", "@angular/core@>=5.0.0", "@angular/core@~12.1.2", "@angular/core@12.1.5":
   "integrity" "sha512-okXnhAPxfblAWSe5M/IqrSATi+ul83a9o9PWOTFR/XCVcbx+neE2IwIr1dIDKBKj91b1CFalLS+uOSkN05PNkA=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-12.1.5.tgz"
   "version" "12.1.5"
@@ -1251,11 +1251,6 @@
     "merge-source-map" "^1.1.0"
     "schema-utils" "^2.7.0"
 
-"@mattlewis92/dom-autoscroller@^2.4.2":
-  "integrity" "sha512-YbrUWREPGEjE/FU6foXcAT1YbVwqD/jkYnY1dFb0o4AxtP3s4xKBthlELjndZih8uwsDWgQZx1eNskRNe2BgZQ=="
-  "resolved" "https://registry.npmjs.org/@mattlewis92/dom-autoscroller/-/dom-autoscroller-2.4.2.tgz"
-  "version" "2.4.2"
-
 "@ng-bootstrap/ng-bootstrap@^10.0.0":
   "integrity" "sha512-Sz+QaxjuyJYJ+zyUbf0TevgcgVesCPQiiFiggEzxKjzY5R+Hvq3YgryLdXf2r/ryePL+C3FXCcmmKpTM5bfczQ=="
   "resolved" "https://registry.npmjs.org/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-10.0.0.tgz"
@@ -1350,11 +1345,6 @@
     "@npmcli/promise-spawn" "^1.3.2"
     "node-gyp" "^7.1.0"
     "read-package-json-fast" "^2.0.1"
-
-"@scarf/scarf@^1.1.1":
-  "integrity" "sha512-VGbKDbk1RFIaSmdVb0cNjjWJoRWRI/Weo23AjRCC2nryO0iAS8pzsToJfPVPtVs74WHw4L1UTADNdIYRLkirZQ=="
-  "resolved" "https://registry.npmjs.org/@scarf/scarf/-/scarf-1.1.1.tgz"
-  "version" "1.1.1"
 
 "@schematics/angular@12.1.4":
   "integrity" "sha512-xGqgGI6GWk4EFdKis8FmSESxoLgjnLQbaRE1t1KZCkSKJzqkOj0R9wiDrtZfcrbPxIkLL+3fAk2ThwwPznT6yw=="
@@ -1711,37 +1701,10 @@
   "resolved" "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   "version" "1.0.2"
 
-"angular-calendar@^0.28.28":
-  "integrity" "sha512-q6FIye6zkwFeMZfHBgFByHpZdHbWu02EQAJ67XjyZmwiDAvjo7LVoTlaug93CjggJ4DL0YEAWDG4rokLBBgq2w=="
-  "resolved" "https://registry.npmjs.org/angular-calendar/-/angular-calendar-0.28.28.tgz"
-  "version" "0.28.28"
-  dependencies:
-    "@scarf/scarf" "^1.1.1"
-    "angular-draggable-droppable" "^4.6.0"
-    "angular-resizable-element" "^3.4.0"
-    "calendar-utils" "^0.8.5"
-    "positioning" "^2.0.1"
-    "tslib" "^1.14.1"
-
-"angular-draggable-droppable@^4.6.0":
-  "integrity" "sha512-+8JhTDMKkc/NuFFqb8/H/QHpB+v4Z7YNrgvEbV+PQxXry19rkr89ofZgjNIXhZexTvJNb03BYlSQoknzXE9b3g=="
-  "resolved" "https://registry.npmjs.org/angular-draggable-droppable/-/angular-draggable-droppable-4.6.0.tgz"
-  "version" "4.6.0"
-  dependencies:
-    "@mattlewis92/dom-autoscroller" "^2.4.2"
-    "tslib" "^1.9.0"
-
 "angular-jwt@^0.1.11":
   "integrity" "sha512-793dv5vXOXaW5/cweMd+sqSf9dPhbazDya3szTVOQ84MDEj1nYLJrixBBa7WNtZeMqz7ylWX7djnFgqLjEWcHw=="
   "resolved" "https://registry.npmjs.org/angular-jwt/-/angular-jwt-0.1.11.tgz"
   "version" "0.1.11"
-
-"angular-resizable-element@^3.4.0":
-  "integrity" "sha512-xL5a8FmghzrZmHPy7uwWz98m91gRXgAcdeCRYcK/nD7psXMTYNk5EPmHA0qZTDCIYljhT4h0OKWLvx56NQGfDA=="
-  "resolved" "https://registry.npmjs.org/angular-resizable-element/-/angular-resizable-element-3.4.0.tgz"
-  "version" "3.4.0"
-  dependencies:
-    "tslib" "^1.9.0"
 
 "angularx-flatpickr@^6.6.0":
   "integrity" "sha512-n/csZmAwfL32P7pUv52FXihSbPjVAjiKglbY8WO9hsBKvAk7mw8PKNjiovln4+fuscJwKo0wSsw+s7A+JpetQg=="
@@ -2251,11 +2214,6 @@
     "to-object-path" "^0.3.0"
     "union-value" "^1.0.0"
     "unset-value" "^1.0.0"
-
-"calendar-utils@^0.8.5":
-  "integrity" "sha512-mgn7dqZfDEqY/obyPO9ib8FSk28vAIOIOXyrjffT9jw1vAmxLguhvohM6JehDA6dY+ddkWBlPCDLCcRv0PncKw=="
-  "resolved" "https://registry.npmjs.org/calendar-utils/-/calendar-utils-0.8.5.tgz"
-  "version" "0.8.5"
 
 "call-bind@^1.0.0", "call-bind@^1.0.2":
   "integrity" "sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA=="
@@ -5779,11 +5737,6 @@
     "debug" "^3.1.1"
     "mkdirp" "^0.5.5"
 
-"positioning@^2.0.1":
-  "integrity" "sha512-DsAgM42kV/ObuwlRpAzDTjH9E8fGKkMDJHWFX+kfNXSxh7UCCQxEmdjv/Ws5Ft1XDnt3JT8fIDYeKNSE2TbttA=="
-  "resolved" "https://registry.npmjs.org/positioning/-/positioning-2.0.1.tgz"
-  "version" "2.0.1"
-
 "posix-character-classes@^0.1.0":
   "integrity" "sha1-AerA/jta9xoqbAL+q7jB/vfgDqs="
   "resolved" "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz"
@@ -7714,11 +7667,6 @@
   "version" "1.2.2"
 
 "tslib@^1.10.0":
-  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
-  "version" "1.14.1"
-
-"tslib@^1.14.1":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
