@@ -29,3 +29,18 @@ export interface ClientesInfo {
     tel: string;
     estatus: string;
 }
+
+export interface UsuariosInfo {
+    id_usuario: number;
+    nombre: string;
+}
+
+export interface ClienteVisita {
+    idCliente: number;
+    fechaRegistro: string;
+    idUsuarioAtencion: number;
+    idCodigoPromocion: number;
+    comentarios: string;
+    servicio: string;
+    total: number;
+}

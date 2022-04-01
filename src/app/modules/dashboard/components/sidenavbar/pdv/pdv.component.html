@@ -48,27 +48,15 @@
         type="date"
         class="example-right-align"
         placeholder="Fecha visita"
+        formControlName="fechaVisita"
       />
     </mat-form-field>
     <br />
-    <mat-form-field
-      class="example-full-width"
-      appearance="fill"
-      style="width: 350px"
-    >
+    <mat-form-field appearance="fill" style="width: 350px">
       <mat-label>Quien Atiende</mat-label>
-      <input
-        type="text"
-        aria-label="Number"
-        matInput
-        [formControl]="myControl"
-        [matAutocomplete]="auto"
-      />
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option 
-        *ngFor="let option of filteredOptions | async"[value]="option">{{ option }}
-        </mat-option>
-      </mat-autocomplete>
+      <mat-select formControlName="iduser">
+        <mat-option value={{item.id_usuario}} *ngFor="let item of userinf">{{item.nombre}}</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill" style="width: 600px">
@@ -78,6 +66,7 @@
         type="text"
         class="example-right-align"
         placeholder="Comentarios"
+        formControlName="comentarios"
       />
       <span matPrefix>&nbsp;</span>
     </mat-form-field>
@@ -89,23 +78,28 @@
         type="text"
         class="example-right-align"
         placeholder="Servicios que se realizaron"
+        formControlName="servicios"
       />
       <span matPrefix>&nbsp;</span>
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill" style="width: 350px">
+    <mat-form-field  appearance="fill" style="width: 350px">
       <mat-label>Promoción</mat-label>
-      <mat-select>
-        <mat-option value="one" *ngFor="let option of filteredOptions | async"[value]="option">{{option}}</mat-option>
+      <mat-select formControlName="idpromo">
+        <mat-option value="{{item.id_promocion}}" *ngFor="let item of promodata_">{{item.promociondescripcion}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill" style="width: 350px">
       <mat-label>Monto total cobrado</mat-label>
-      <input matInput type="number" class="example-right-align" placeholder="0">
+      <input matInput type="number" class="example-right-align" placeholder="0" formControlName="total">
       <span matPrefix>$&nbsp;</span>
       <span matSuffix>.00</span>
     </mat-form-field>
+    <button (click)="guardarVisita()"style="width: 250px; margin-left: 10px; height: 35px"
+      type="button" mat-raised-button>
+      Guardar visita
+    </button>
   </div>
   <div style="float: right"></div>
 </form>

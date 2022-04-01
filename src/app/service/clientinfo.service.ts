@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ModeleoDeRespuesta } from '../Models/responsemodel'
-import { ClienteModel, PromocionModel, ClientesInfo } from '../Models/clientemodel'
+import { ClienteModel, PromocionModel, ClientesInfo, UsuariosInfo } from '../Models/clientemodel'
 import { Observable } from 'rxjs';
 import { LoginService } from '../components/login/login.service';
 
@@ -41,5 +41,9 @@ export class ClientinfoService {
     this.getToken()
     this.headers
     return await this.http.get<ClientesInfo>(`http://127.0.0.1:8000/clientes/getcliente?usuariocliente=${Usuario}`,{headers: this.headers}).toPromise()
+  }
+
+  getUsersInfo(): Observable<UsuariosInfo[]> {
+    return this.http.get<UsuariosInfo[]>(`http://127.0.0.1:8000/seguridad/getusers`,{headers: this.headers})
   }
 }
