@@ -5,6 +5,8 @@ import { UsuariosInfo, ClientesInfo, ClienteVisita } from '../../../../../Models
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { PromocionModel } from '../../../../../Models/clientemodel'
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ModeleoDeRespuesta } from '../../../../../Models/responsemodel'
 
 const PromoData: PromocionModel[] = [
 ];
@@ -40,7 +42,7 @@ export class PdvComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Irasema', 'Donnet'];
   filteredOptions: Observable<string[]>;
-
+  private _snackBar: MatSnackBar
   profileForm = new FormGroup({
     nombreUsuario: new FormControl(''),
     idpromo: new FormControl(''),
@@ -59,7 +61,13 @@ export class PdvComponent implements OnInit {
   constructor(private ClienteService: ClientinfoService, private api:ClientinfoService) { }
   nomUsuario = "";
   
-
+  mensaje(Respuesta: string) {
+    this._snackBar.open(Respuesta, '', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
+  }
   guardarVisita(){
     this.clienteVisit.idCliente = this.dataSource.id_cliente
     this.clienteVisit.idCodigoPromocion = this.profileForm.get('idpromo')?.value
@@ -68,8 +76,11 @@ export class PdvComponent implements OnInit {
     this.clienteVisit.comentarios = this.profileForm.get('comentarios')?.value
     this.clienteVisit.servicio = this.profileForm.get('servicios')?.value
     this.clienteVisit.total = this.profileForm.get('total')?.value
-    console.log(this.clienteVisit)
-
+    this.ClienteService.guardarVisita(this.clienteVisit).subscribe(ModeleoDeRespuesta => {
+      this.mensaje(ModeleoDeRespuesta.Respuesta);
+    }, response => {
+      this.mensaje(response.error.Respuesta)
+    })
     this.profileForm.reset();
   }
   async buscarCliente(){
