@@ -1,121 +1,180 @@
+<span class="material-icons-outlined">
+    edit
+    </span>
 <mat-tab-group>
-    <mat-tab label="Clientes" (click)="getclientes">
-        <div style="margin-top: 20px;">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-tab label="Clientes" (click)="(getclientes)">
+    <div style="margin-top: 20px">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id_cliente">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.id_cliente }}</td>
+        </ng-container>
 
-                <!--- Note that these columns can be defined in any order.
-                      The actual rendered columns are set as a property on the row definition" -->
+        <ng-container matColumnDef="nombre_usuario">
+          <th mat-header-cell *matHeaderCellDef>Usuario de Instagram</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.nombre_usuario }}
+          </td>
+        </ng-container>
 
-                <!-- Position Column -->
-                <ng-container matColumnDef="id_cliente">
-                    <th mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.id_cliente}} </td>
-                </ng-container>
+        <ng-container matColumnDef="nombre_completo">
+          <th mat-header-cell *matHeaderCellDef>Nombre Completo</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.nombre_completo }}
+          </td>
+        </ng-container>
 
+        <ng-container matColumnDef="edad">
+          <th mat-header-cell *matHeaderCellDef>Edad</th>
+          <td mat-cell *matCellDef="let element">{{ element.edad }}</td>
+        </ng-container>
 
-                <ng-container matColumnDef="nombre_usuario">
-                    <th mat-header-cell *matHeaderCellDef> Usuario de Instagram </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nombre_usuario}} </td>
-                </ng-container>
+        <ng-container matColumnDef="fecha_registro">
+          <th mat-header-cell *matHeaderCellDef>Fecha Registro</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fecha_registro }}
+          </td>
+        </ng-container>
 
+        <ng-container matColumnDef="fecha_nacimiento">
+          <th mat-header-cell *matHeaderCellDef>Fecha Nacimiento</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fecha_nacimiento }}
+          </td>
+        </ng-container>
 
-                <ng-container matColumnDef="nombre_completo">
-                    <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
-                </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Correo</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
 
-                <ng-container matColumnDef="edad">
-                    <th mat-header-cell *matHeaderCellDef> Edad </th>
-                    <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
-                </ng-container>
+        <ng-container matColumnDef="tel">
+          <th mat-header-cell *matHeaderCellDef>Telefono</th>
+          <td mat-cell *matCellDef="let element">{{ element.tel }}</td>
+        </ng-container>
 
-                <ng-container matColumnDef="fecha_registro">
-                    <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
-                    <td mat-cell *matCellDef="let element"> {{element.fecha_registro}} </td>
-                </ng-container>
+        <ng-container matColumnDef="estatus">
+          <th mat-header-cell *matHeaderCellDef>Estatús</th>
+          <td mat-cell *matCellDef="let element">{{ element.estatus }}</td>
+        </ng-container>
 
-                <ng-container matColumnDef="fecha_nacimiento">
-                    <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
-                    <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
-                </ng-container>
+        
 
-                <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef> Correo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-                </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-tab>
+  <mat-tab label="Guardar Cliente">
+    <form [formGroup]="profileForm">
+      <div
+        class="example-container"
+        style="margin-left: 50px; margin-top: 50px"
+      >
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Usuario</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Usuario de instagram del cliente "
+            formControlName="nombreUsuario"
+          />
+          <span matPrefix>@&nbsp;</span>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Nombre Completo</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Nombre completo del cliente"
+            formControlName="nombreCompleto"
+          />
+        </mat-form-field>
 
-                <ng-container matColumnDef="tel">
-                    <th mat-header-cell *matHeaderCellDef> Telefono </th>
-                    <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
-                </ng-container>
+        <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Codigo QR</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Codigo QR del Cliente"
+            formControlName="codigoQr"
+          />
+        </mat-form-field>
+        <br />
 
-                <ng-container matColumnDef="estatus">
-                    <th mat-header-cell *matHeaderCellDef> Estatús </th>
-                    <td mat-cell *matCellDef="let element"> {{element.estatus}} </td>
-                </ng-container>
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Edad</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Edad del cliente"
+            formControlName="edad"
+          />
+        </mat-form-field>
+        <br />
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-        </div>
-    </mat-tab>
-    <mat-tab label="Guardar Cliente">
-        <form [formGroup]="profileForm">
-            <div class="example-container" style="margin-left: 50px; margin-top: 50px">
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Usuario</mat-label>
-                    <input matInput type="text" class="example-right-align" placeholder="Usuario de instagram del cliente " formControlName="nombreUsuario" />
-                    <span matPrefix>@&nbsp;</span>
-                </mat-form-field>
-                <br />
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Nombre Completo</mat-label>
-                    <input matInput type="text" class="example-right-align" placeholder="Nombre completo del cliente" formControlName="nombreCompleto" />
-                </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input
+            matInput
+            type="date"
+            class="example-right-align"
+            placeholder="Fecha nacimiento del cliente"
+            formControlName="fechaNacimiento"
+          />
+        </mat-form-field>
+        <br />
 
-                <br />
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Codigo QR</mat-label>
-                    <input matInput type="text" class="example-right-align" placeholder="Codigo QR del Cliente" formControlName="codigoQr" />
-                </mat-form-field>
-                <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Correo Electronico</mat-label>
+          <input
+            matInput
+            type="email"
+            class="example-right-align"
+            placeholder="Correo del cliente"
+            formControlName="email"
+          />
+        </mat-form-field>
+        <br />
 
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Edad</mat-label>
-                    <input matInput type="text" class="example-right-align" placeholder="Edad del cliente" formControlName="edad" />
-                </mat-form-field>
-                <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Telefono</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Telefono del cliente"
+            formControlName="tel"
+          />
+        </mat-form-field>
+        <br />
 
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Fecha Nacimiento</mat-label>
-                    <input matInput type="date" class="example-right-align" placeholder="Fecha nacimiento del cliente" formControlName="fechaNacimiento" />
-                </mat-form-field>
-                <br />
-
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Correo Electronico</mat-label>
-                    <input matInput type="email" class="example-right-align" placeholder="Correo del cliente" formControlName="email" />
-                </mat-form-field>
-                <br />
-
-                <mat-form-field appearance="fill" style="width: 350px">
-                    <mat-label>Telefono</mat-label>
-                    <input matInput type="text" class="example-right-align" placeholder="Telefono del cliente" formControlName="tel" />
-                </mat-form-field>
-                <br />
-
-                <input style="display: none" hidden #fileInput type="file" id="file" />
-                <button style="width: 350px" type="button" mat-raised-button (click)="fileInput.click()">
-                Seleccionar archivo
-              </button>
-                <br/>
-                <br>
-                <button style="width: 350px" type="button" mat-raised-button (click)="guardarCliente()">
-                Guardar Cliente
-              </button>
-            </div>
-        </form>
-
-    </mat-tab>
-
+        <input style="display: none" hidden #fileInput type="file" id="file" />
+        <button
+          style="width: 350px"
+          type="button"
+          mat-raised-button
+          (click)="fileInput.click()"
+        >
+          Seleccionar archivo
+        </button>
+        <br />
+        <br />
+        <button
+          style="width: 350px"
+          type="button"
+          mat-raised-button
+          (click)="guardarCliente()"
+        >
+          Guardar Cliente
+        </button>
+      </div>
+    </form>
+  </mat-tab>
 </mat-tab-group>

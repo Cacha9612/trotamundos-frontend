@@ -42,7 +42,7 @@ export class PdvComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Irasema', 'Donnet'];
   filteredOptions: Observable<string[]>;
-  private _snackBar: MatSnackBar
+  
   profileForm = new FormGroup({
     nombreUsuario: new FormControl(''),
     idpromo: new FormControl(''),
@@ -58,10 +58,11 @@ export class PdvComponent implements OnInit {
   promodata_ = PromoData
   userinf = UserInfo
   clienteVisit = clienteVisita
-  constructor(private ClienteService: ClientinfoService, private api:ClientinfoService) { }
+  constructor(private ClienteService: ClientinfoService, private api:ClientinfoService, private _snackBar: MatSnackBar) { }
   nomUsuario = "";
   
   mensaje(Respuesta: string) {
+    console.log(Respuesta)
     this._snackBar.open(Respuesta, '', {
       duration: 5000,
       horizontalPosition: 'center',
@@ -76,11 +77,16 @@ export class PdvComponent implements OnInit {
     this.clienteVisit.comentarios = this.profileForm.get('comentarios')?.value
     this.clienteVisit.servicio = this.profileForm.get('servicios')?.value
     this.clienteVisit.total = this.profileForm.get('total')?.value
-    this.ClienteService.guardarVisita(this.clienteVisit).subscribe(ModeleoDeRespuesta => {
-      this.mensaje(ModeleoDeRespuesta.Respuesta);
-    }, response => {
-      this.mensaje(response.error.Respuesta)
-    })
+    try {
+      this.ClienteService.guardarVisita(this.clienteVisit).subscribe(ModeleoDeRespuesta => {
+        console.log(ModeleoDeRespuesta)
+        this.mensaje(ModeleoDeRespuesta.Respuesta);
+      }, response => {
+        this.mensaje(response.error.Respuesta)
+      })
+    } catch (error) {
+      
+    } 
     this.profileForm.reset();
   }
   async buscarCliente(){

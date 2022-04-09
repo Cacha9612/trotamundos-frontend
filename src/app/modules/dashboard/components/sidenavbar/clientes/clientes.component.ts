@@ -3,6 +3,7 @@ import { ClientinfoService } from '../../../../../service/clientinfo.service'
 import { ClienteModel, ClientesInfo } from '../../../../../Models/clientemodel'
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
 
 const ELEMENT_DATA: ClientesInfo[] = []
 @Component({

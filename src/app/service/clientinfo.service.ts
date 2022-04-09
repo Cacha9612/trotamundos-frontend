@@ -50,6 +50,6 @@ export class ClientinfoService {
   guardarVisita(data: ClienteVisita): Observable<ModeleoDeRespuesta>{
     this.getToken()
     this.headers
-    return this.http.post<ModeleoDeRespuesta>('https://api.medusalashes.com.mx/clientes/registravisita', data , {headers: this.headers});
+    return this.http.post<ModeleoDeRespuesta>('http://127.0.0.1:8000/clientes/registravisita', data , {headers: this.headers});
   }
 }
