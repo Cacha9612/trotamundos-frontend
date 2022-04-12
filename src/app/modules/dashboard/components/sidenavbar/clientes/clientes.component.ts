@@ -15,7 +15,7 @@ export class ClientesComponent implements OnInit {
   [x: string]: any;
   
   displayedColumns: string[] = ['id_cliente', 'nombre_usuario', 'nombre_completo', 'edad'
-  ,'fecha_registro', 'fecha_nacimiento', 'email', 'tel', 'estatus'];
+  ,'fecha_registro', 'fecha_nacimiento', 'email', 'tel', 'estatus','editar', 'eliminar'];
   dataSource = ELEMENT_DATA;
   constructor(
     private _snackBar: MatSnackBar,
@@ -36,6 +36,11 @@ export class ClientesComponent implements OnInit {
     this.ClienteService.getclientes().subscribe(data => {
       this.dataSource = data;
     })
+  }
+  confirmarEliminar(id_cliente : number){
+    let res = window.confirm('Estas seguro que quieres eliminar?')
+    console.log(id_cliente)
+    console.log(res)
   }
   guardarCliente(){    
     const data: ClienteModel = {
