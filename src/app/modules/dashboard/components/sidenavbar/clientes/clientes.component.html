@@ -1,6 +1,6 @@
 
-<mat-tab-group>
-  <mat-tab label="Clientes" (click)="(getclientes)">
+<mat-tab-group [(selectedIndex)]=selectedIndex (selectedTabChange)="tabChanged($event)">
+  <mat-tab label="Clientes" (click)="clearForm()">
     <div style="margin-top: 20px">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="id_cliente">
@@ -58,19 +58,21 @@
 
         <ng-container matColumnDef="editar">
           <th mat-header-cell *matHeaderCellDef>Editar</th>
-          <td mat-cell *matCellDef="let element"><img src="../../../../../../assets/img/edit.png"></td>
+          <td mat-cell *matCellDef="let element"> 
+            <img style="cursor:pointer" (click)="editarCliente(element.id_cliente)" src="../../../../../../assets/img/edit.png">
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="eliminar">
           <th mat-header-cell *matHeaderCellDef>Eliminar</th>
-          <td mat-cell *matCellDef="let element"><img (click)="confirmarEliminar(element.id_cliente)" src="../../../../../../assets/img/outline_delete_black_24dp.png"></td>
+          <td mat-cell *matCellDef="let element"><img style="cursor:pointer" (click)="confirmarEliminar(element.id_cliente)" src="../../../../../../assets/img/outline_delete_black_24dp.png"></td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
   </mat-tab>
-  <mat-tab label="Guardar Cliente">
+  <mat-tab label="Guardar Cliente" (click)="clearForm()">
     <form [formGroup]="profileForm">
       <div
         class="example-container"
@@ -170,6 +172,118 @@
           Seleccionar archivo
         </button>
         <br />
+        <br />
+        <button
+          style="width: 350px"
+          type="button"
+          mat-raised-button
+          (click)="guardarCliente()"
+        >
+          Guardar Cliente
+        </button>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="Editar Cliente" id="editarclienttab" (click)="clearForm()">
+    <form [formGroup]="profileForm">
+      <div
+        class="example-container"
+        style="margin-left: 50px; margin-top: 50px"
+      >
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Usuario</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Usuario de instagram del cliente "
+            formControlName="nombreUsuario"
+          />
+          <span matPrefix>@&nbsp;</span>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Nombre Completo</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Nombre completo del cliente"
+            formControlName="nombreCompleto"
+          />
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Codigo QR</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Codigo QR del Cliente"
+            formControlName="codigoQr"
+          />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Edad</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Edad del cliente"
+            formControlName="edad"
+          />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input
+            matInput
+            type="date"
+            class="example-right-align"
+            placeholder="Fecha nacimiento del cliente"
+            formControlName="fechaNacimiento"
+          />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Correo Electronico</mat-label>
+          <input
+            matInput
+            type="email"
+            class="example-right-align"
+            placeholder="Correo del cliente"
+            formControlName="email"
+          />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill" style="width: 350px">
+          <mat-label>Telefono</mat-label>
+          <input
+            matInput
+            type="text"
+            class="example-right-align"
+            placeholder="Telefono del cliente"
+            formControlName="tel"
+          />
+        </mat-form-field>
+        <br />
+
+        <!-- <input style="display: none" hidden #fileInput type="file" id="file" />
+        <button
+          style="width: 350px"
+          type="button"
+          mat-raised-button
+          (click)="fileInput.click()"
+        >
+          Seleccionar archivo
+        </button>
+        <br /> -->
         <br />
         <button
           style="width: 350px"

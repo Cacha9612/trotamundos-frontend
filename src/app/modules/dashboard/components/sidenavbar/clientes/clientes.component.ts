@@ -4,6 +4,7 @@ import { ClienteModel, ClientesInfo } from '../../../../../Models/clientemodel'
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 
 const ELEMENT_DATA: ClientesInfo[] = []
 @Component({
@@ -13,10 +14,11 @@ const ELEMENT_DATA: ClientesInfo[] = []
 })
 export class ClientesComponent implements OnInit {
   [x: string]: any;
-  
+  selectedIndex = 0;
   displayedColumns: string[] = ['id_cliente', 'nombre_usuario', 'nombre_completo', 'edad'
   ,'fecha_registro', 'fecha_nacimiento', 'email', 'tel', 'estatus','editar', 'eliminar'];
   dataSource = ELEMENT_DATA;
+  clienteActual : ClientesInfo
   constructor(
     private _snackBar: MatSnackBar,
     private ClienteService: ClientinfoService) {
@@ -42,6 +44,21 @@ export class ClientesComponent implements OnInit {
     console.log(id_cliente)
     console.log(res)
   }
+  editarCliente(id_cliente: number){
+    this.selectedIndex = 2;
+    for (const iterator of this.dataSource) {
+        if(iterator.id_cliente = id_cliente){
+          this.clienteActual = iterator
+        }      
+    }
+    this.profileForm.get('nombreCompleto')?.setValue(this.clienteActual.nombre_completo)
+    this.profileForm.get('nombreUsuario')?.setValue(this.clienteActual.nombre_usuario);
+    this.profileForm.get('codigoQr')?.setValue(this.clienteActual.qr);
+    this.profileForm.get('fechaNacimiento')?.setValue(this.clienteActual.fecha_nacimiento);
+    this.profileForm.get('edad')?.setValue(this.clienteActual.edad);
+    this.profileForm.get('email')?.setValue(this.clienteActual.email);
+    this.profileForm.get('tel')?.setValue(this.clienteActual.tel);
+    }
   guardarCliente(){    
     const data: ClienteModel = {
       nombrecompleto: this.profileForm.get('nombreCompleto')!.value,
@@ -58,6 +75,7 @@ export class ClientesComponent implements OnInit {
     }, response => {
       this.mensajeRespuesta(response.error.Respuesta)
     })
+    this.profileForm.reset();
   }
   mensajeRespuesta(Respuesta: string) {
     this._snackBar.open(Respuesta, '', {
@@ -66,4 +84,9 @@ export class ClientesComponent implements OnInit {
       verticalPosition: 'bottom',
     });
   }
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    if (this.selectedIndex != 2) {
+      this.profileForm.reset();
+    }
+}
 }

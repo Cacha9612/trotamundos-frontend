@@ -28,6 +28,7 @@ export interface ClientesInfo {
     email: string;
     tel: string;
     estatus: string;
+    qr: string;
 }
 
 export interface UsuariosInfo {

@@ -30,7 +30,8 @@ const ELEMENT_DATA: ClientesInfo= {
     fecha_nacimiento: "",
     email: "",
     tel: "",
-    estatus: ""
+    estatus: "",
+    qr:""
 }
 
 @Component({
@@ -60,7 +61,7 @@ export class PdvComponent implements OnInit {
   clienteVisit = clienteVisita
   constructor(private ClienteService: ClientinfoService, private api:ClientinfoService, private _snackBar: MatSnackBar) { }
   nomUsuario = "";
-  
+
   mensaje(Respuesta: string) {
     console.log(Respuesta)
     this._snackBar.open(Respuesta, '', {
