@@ -6,6 +6,7 @@ export interface ClienteModel {
     codigoQr: string;
     email: string;
     tel: string;
+    id_cliente: number
 }
 
 export interface PromocionModel {
