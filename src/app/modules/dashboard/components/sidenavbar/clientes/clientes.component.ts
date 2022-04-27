@@ -112,6 +112,7 @@ export class ClientesComponent implements OnInit {
       this.ClienteService.guardarCliente(data).subscribe(
         (ModeleoDeRespuesta) => {
           this.mensajeRespuesta(ModeleoDeRespuesta.Respuesta);
+          this.ngOnInit()
         },
         (response) => {
           this.mensajeRespuesta(response.error.Respuesta);
@@ -120,6 +121,7 @@ export class ClientesComponent implements OnInit {
     } else if (id == 2) {
       this.ClienteService.editarCliente(data).subscribe(
         (ModeleoDeRespuesta) => {
+          this.ngOnInit()
           this.mensajeRespuesta(ModeleoDeRespuesta.Respuesta);
         },
         (response) => {
