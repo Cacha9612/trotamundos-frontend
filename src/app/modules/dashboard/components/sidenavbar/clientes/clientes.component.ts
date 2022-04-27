@@ -52,13 +52,13 @@ export class ClientesComponent implements OnInit {
   confirmarEliminar(id_cliente: number) {
     let res = window.confirm('Estas seguro que quieres eliminar?');
     const data: ClienteModel = {
-      nombrecompleto: this.profileForm.get('nombreCompleto')!.value,
-      nombreusuario: this.profileForm.get('nombreUsuario')!.value,
-      codigoQr: this.profileForm.get('codigoQr')!.value,
-      fechanacimiento: this.profileForm.get('fechaNacimiento')!.value,
+      nombrecompleto: '',
+      nombreusuario: '',
+      codigoQr: '',
+      fechanacimiento: '',
       edad: 0,
-      email: this.profileForm.get('email')!.value,
-      tel: this.profileForm.get('tel')!.value,
+      email: '',
+      tel: '',
       id_cliente : id_cliente
     };
     if (res) {
