@@ -30,6 +30,7 @@ export interface ClientesInfo {
     tel: string;
     estatus: string;
     qr: string;
+    contador: number;
 }
 
 export interface UsuariosInfo {
@@ -45,4 +46,18 @@ export interface ClienteVisita {
     comentarios: string;
     servicio: string;
     total: number;
+}
+
+export interface Visita {
+    id_visita: number;
+    nombre_cliente: string;
+    fecha_agendada: string;
+    atiende: string;
+    usuario_cliente: string;
+    promocion: string;
+    comentarios: string;
+    servicio: string;
+    total: number;
+    id_estatus: number;
+    contador: number;
 }

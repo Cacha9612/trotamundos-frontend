@@ -1,5 +1,19 @@
 <mat-tab-group>
   <mat-tab label="Registro de visitas">
+    <table *ngFor="let visita of visitas">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Fecha</th>
+      </thead>
+      <tbody>
+        <td>
+          {{visita.contador}}
+        </td>
+        <td>{{visita.fecha_agendada}}</td>
+      </tbody>
+     
+    </table>
 
   </mat-tab>
   <mat-tab label="Registrar Visitas">

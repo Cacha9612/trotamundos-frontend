@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ClientinfoService } from '../../../../../service/clientinfo.service'
-import { UsuariosInfo, ClientesInfo, ClienteVisita } from '../../../../../Models/clientemodel'
+import { UsuariosInfo, ClientesInfo, ClienteVisita , Visita} from '../../../../../Models/clientemodel'
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { PromocionModel } from '../../../../../Models/clientemodel'
@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ModeleoDeRespuesta } from '../../../../../Models/responsemodel'
 
 const PromoData: PromocionModel[] = [
+];
+const visita: Visita[] = [
 ];
 const clienteVisita: ClienteVisita={
     idCliente: 0,
@@ -31,7 +33,8 @@ const ELEMENT_DATA: ClientesInfo= {
     email: "",
     tel: "",
     estatus: "",
-    qr:""
+    qr:"",
+    contador: 0,
 }
 
 @Component({
@@ -59,6 +62,10 @@ export class PdvComponent implements OnInit {
   promodata_ = PromoData
   userinf = UserInfo
   clienteVisit = clienteVisita
+  visitas = visita
+  fechaInicio= '';
+  
+  fechaFin: '';
   constructor(private ClienteService: ClientinfoService, private api:ClientinfoService, private _snackBar: MatSnackBar) { }
   nomUsuario = "";
 
@@ -110,7 +117,19 @@ export class PdvComponent implements OnInit {
     this.api.getUsersInfo().subscribe(data =>{
       this.userinf = data;
     })
-    
+
+    var todayDate = new Date().toISOString().toLocaleString().slice(0, 10);
+    if (this.fechaInicio == ''){
+      this.fechaInicio = todayDate;
+    }
+    this.ClienteService.getVisitas(this.fechaInicio, this.fechaFin).subscribe((data) => {
+      this.visitas = data;
+      for (const iterator of this.visitas) {
+        iterator.contador = this.visitas.indexOf(iterator) + 1;
+      }
+    });
+   
+
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

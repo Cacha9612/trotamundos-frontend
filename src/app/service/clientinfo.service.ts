@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ModeleoDeRespuesta } from '../Models/responsemodel'
-import { ClienteModel, PromocionModel, ClientesInfo, UsuariosInfo, ClienteVisita } from '../Models/clientemodel'
+import { ClienteModel, PromocionModel, ClientesInfo, UsuariosInfo, ClienteVisita , Visita} from '../Models/clientemodel'
 import { Observable } from 'rxjs';
 import { LoginService } from '../components/login/login.service';
 
@@ -62,5 +62,11 @@ export class ClientinfoService {
     this.getToken()
     this.headers
     return this.http.put<ModeleoDeRespuesta>('https://api.medusalashes.com.mx/clientes/eliminar', data, {headers: this.headers});
+  }
+
+  getVisitas(fechaInicio: string, fechaFin: string): Observable<Visita[]> {
+    this.getToken()
+    this.headers
+    return this.http.get<Visita[]>(`http://127.0.0.1:8000/clientes/visitas?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`, {headers: this.headers})
   }
 }

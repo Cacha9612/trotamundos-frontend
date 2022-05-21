@@ -47,7 +47,11 @@ export class ClientesComponent implements OnInit {
   ngOnInit(): void {
     this.ClienteService.getclientes().subscribe((data) => {
       this.dataSource = data;
+      for (const iterator of this.dataSource) {
+        iterator.contador = this.dataSource.indexOf(iterator) + 1;
+      }
     });
+   
   }
   confirmarEliminar(id_cliente: number) {
     let res = window.confirm('Estas seguro que quieres eliminar?');
