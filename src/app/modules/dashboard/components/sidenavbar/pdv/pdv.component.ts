@@ -43,6 +43,11 @@ const ELEMENT_DATA: ClientesInfo= {
   styleUrls: ['./pdv.component.scss']
 })
 export class PdvComponent implements OnInit {
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl(),
+  });
+
   myControl = new FormControl();
   options: string[] = ['Irasema', 'Donnet'];
   filteredOptions: Observable<string[]>;
@@ -58,13 +63,16 @@ export class PdvComponent implements OnInit {
   });
   displayedColumns: string[] = ['nombre_usuario', 'nombre_completo'
   ,'fecha_registro', 'fecha_nacimiento', 'email', 'tel'];
+
+  visitColumns: string[] = ['id','fecha_agendada', 'nombre_cliente',
+'atendio','usuario_cliente','promocion','comentarios','servicio','total'];
   dataSource = ELEMENT_DATA;
   promodata_ = PromoData
   userinf = UserInfo
   clienteVisit = clienteVisita
   visitas = visita
   fechaInicio= '';
-  
+  visitSource = this.visitas
   fechaFin: '';
   constructor(private ClienteService: ClientinfoService, private api:ClientinfoService, private _snackBar: MatSnackBar) { }
   nomUsuario = "";
@@ -76,6 +84,25 @@ export class PdvComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
     });
+  }
+  editarVisita(IdVisita: number){
+
+  }
+  eliminarVisita(IdVisita: number){    
+    
+  }
+  buscarVisitaPorFecha(){
+    var fechaIn = this.range.get('start')?.value
+    fechaIn = fechaIn.toISOString().toLocaleString().slice(0, 10)
+    var fechaFin = this.range.get('end')?.value
+    fechaFin = fechaFin.toISOString().toLocaleString().slice(0, 10)
+    this.ClienteService.getVisitas(fechaIn, fechaFin).subscribe(data => {
+      this.visitas = data;
+      for (const iterator of this.visitas) {
+        iterator.contador = this.visitas.indexOf(iterator) + 1;
+      }
+      this.visitSource = this.visitas;
+    })
   }
   guardarVisita(){
     this.clienteVisit.idCliente = this.dataSource.id_cliente
@@ -127,6 +154,7 @@ export class PdvComponent implements OnInit {
       for (const iterator of this.visitas) {
         iterator.contador = this.visitas.indexOf(iterator) + 1;
       }
+      this.visitSource = this.visitas;
     });
    
 
