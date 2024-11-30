@@ -1,10 +1,10 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
-import {environment} from './enviroments/environments.prod';
+import {environment} from './environments/environment.prod';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes'; // Define las rutas en un archivo separado
+import { provideHttpClient } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -12,8 +12,8 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes), // Configuración de rutas
-    provideHttpClient(),   // HttpClient para peticiones HTTP
+    provideHttpClient(),  // Aquí usas provideHttpClient
+    provideRouter(routes),
   ],
 }).catch((err) => console.error(err));
 

@@ -24,4 +24,6 @@ import { RouterModule } from '@angular/router';
     `,
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'TrotamundosWeb';  // Definir la propiedad 'title'
+}

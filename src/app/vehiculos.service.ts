@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../enviroments/environments.prod';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { environment } from '../enviroments/environments.prod';
 export class VehiculosService {
   private apiUrl = `${environment.apiUrl}`; // Ajusta la URL de la API según tu configuración
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {} // Inyección de HttpClient
 
   // Método para obtener todos los vehículos
   getVehiculos(): Observable<any> {
