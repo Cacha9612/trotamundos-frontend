@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: false,
-  template: `
-    <h1>Welcome to the Home Page</h1>
-  `,
+  templateUrl: './home.component.html',
   styles: [],
+  
 })
-export class HomeComponent {}
+export class HomeComponent {
+  constructor(private router: Router) {}
+  navigateToVehiculos() {
+    this.router.navigate(['/vehiculos']);
+  }
+}
+

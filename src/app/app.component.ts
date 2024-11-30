@@ -6,10 +6,10 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule], // Importa el módulo de enrutamiento
   template: `
-    <nav>
-      <a routerLink="/home">Home</a>
-      <a routerLink="/vehiculos">Vehículos</a>
-    </nav>
+   <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/vehiculos" routerLinkActive="active">Vehículos</a>
+  </nav>
     <router-outlet></router-outlet>
   `,
   styles: [
