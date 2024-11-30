@@ -35,8 +35,8 @@
             "ssr": {
               "entry": "src/server.ts"
             },
-            "baseHref": "/",  
-            "deployUrl": "/"  
+            "baseHref": "/trotamundos/",  
+            "deployUrl": "/trotamundos/"  
           },
           "configurations": {
             "production": {
@@ -59,8 +59,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/",  
-              "deployUrl": "/"  
+              "baseHref": "/trotamundos/",  
+              "deployUrl": "/trotamundos/"  
             },
             "development": {
               "optimization": false,
