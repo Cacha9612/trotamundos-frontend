@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-vehiculos',
-  standalone: true,   // Asegúrate de que este componente sea autónomo si es stand-alone
+  standalone: true,   
   imports: [CommonModule],
   templateUrl: './vehiculos.component.html',
 })
