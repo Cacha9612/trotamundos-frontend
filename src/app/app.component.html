@@ -9,6 +9,8 @@
     --gray-900: oklch(19.37% 0.006 300.98);
     --gray-700: oklch(36.98% 0.014 302.71);
     --gray-400: oklch(70.9% 0.015 304.04);
+    --light-gray: oklch(80% 0.05 300);
+    --tool-accent: #333333;
     --red-to-pink-to-purple-vertical-gradient: linear-gradient(
       180deg,
       var(--orange-red) 0%,
@@ -30,10 +32,10 @@
 
   h1 {
     font-size: 3.5rem;
-    color: var(--gray-900);
+    color: var(--tool-accent);
     font-weight: 600;
     margin: 0;
-    font-family: "Inter Tight", sans-serif;
+    font-family: "Roboto Slab", serif;
     line-height: 1.2;
     text-align: center;
   }
@@ -72,6 +74,18 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--light-gray);
+    background: var(--gray-400);
+  }
+
+  .left-side {
+    text-align: center;
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .pill-group {
@@ -88,12 +102,13 @@
     border-radius: 25px;
     background: var(--pill-accent);
     font-weight: 500;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .pill-group a:hover {
     background: var(--electric-violet);
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
   @media screen and (max-width: 768px) {
@@ -109,7 +124,6 @@
   }
 </style>
 
-
 <main>
   <div class="content">
     <div class="left-side">
@@ -121,8 +135,8 @@
       >
         <!-- SVG Content -->
       </svg>
-      <h1>Angular Project</h1>
-      <p>Welcome to your Angular application!</p>
+      <h1>Trotamundos</h1>
+      <p></p>
     </div>
     <div class="right-side">
       <div class="pill-group">
