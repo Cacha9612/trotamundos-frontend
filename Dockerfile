@@ -1,4 +1,4 @@
-FROM node:14.17 as builder
+FROM node:20 as builder
 WORKDIR /usr/src/app/
 COPY . .
 RUN yarn
