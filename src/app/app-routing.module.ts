@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ClientinfoComponent } from './components/clientinfo/clientinfo.component';
+import { VehiculosComponent } from './vehiculos/vehiculos.component';
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
-  {
-    path:'login',
-    component:LoginComponent
-  },
-  {
-    path:'clientas',
-    component:ClientinfoComponent
-  }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'vehiculos', component: VehiculosComponent },
 ];
 
 @NgModule({
@@ -19,4 +14,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

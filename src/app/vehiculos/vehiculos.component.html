@@ -1,0 +1,46 @@
+<div class="container">
+  <!-- Cargando... -->
+  <div *ngIf="loading" class="overlay">
+    <i class="fa fa-spinner fa-spin"></i> Cargando...
+  </div>
+
+  <!-- Tabla de vehículos -->
+  <div *ngIf="!loading">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID Vehículo</th>
+          <th>Nombre del Cliente</th>
+          <th>Nombre del Empleado</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Color</th>
+          <th>No Serie</th>
+          <th>Placa</th>
+          <th>Tipo</th>
+          <th>Motor</th>
+          <th>Kms</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.ID }}</td>
+          <td>{{ vehiculo.NombreCliente }}</td>
+          <td>{{ vehiculo.NombreEmpleado }}</td>
+          <td>{{ vehiculo.Marca }}</td>
+          <td>{{ vehiculo.Modelo }}</td>
+          <td>{{ vehiculo.Color }}</td>
+          <td>{{ vehiculo.No_serie }}</td>
+          <td>{{ vehiculo.Placa }}</td>
+          <td>{{ vehiculo.Tipo }}</td>
+          <td>{{ vehiculo.Motor }}</td>
+          <td>{{ vehiculo.Kms }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="descargarDocumento(vehiculo.ID)">Descargar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

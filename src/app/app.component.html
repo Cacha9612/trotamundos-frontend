@@ -1,1 +1,134 @@
-<router-outlet></router-outlet>
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+    --pill-accent: var(--bright-blue);
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: var(--gray-900);
+    font-weight: 600;
+    margin: 0;
+    font-family: "Inter Tight", sans-serif;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: var(--gray-700);
+    font-size: 1.125rem;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: var(--gray-400);
+  }
+
+  .angular-logo {
+    max-width: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .pill-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .pill-group a {
+    font-size: 1.125rem;
+    color: var(--gray-900);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    background: var(--pill-accent);
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .pill-group a:hover {
+    background: var(--electric-violet);
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pill-group {
+      margin-top: 1rem;
+      flex-direction: column;
+    }
+  }
+</style>
+
+
+<main>
+  <div class="content">
+    <div class="left-side">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 982 239"
+        fill="none"
+        class="angular-logo"
+      >
+        <!-- SVG Content -->
+      </svg>
+      <h1>Angular Project</h1>
+      <p>Welcome to your Angular application!</p>
+    </div>
+    <div class="right-side">
+      <div class="pill-group">
+        <a routerLink="/home" routerLinkActive="active">Inicio</a>
+        <a routerLink="/vehiculos" routerLinkActive="active">Vehículos</a>
+      </div>
+    </div>
+  </div>
+</main>
