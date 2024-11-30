@@ -34,7 +34,9 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "baseHref": "/trotamundos/",
+            "deployUrl": "/trotamundos/"
           },
           "configurations": {
             "production": {
@@ -50,18 +52,22 @@
                   "maximumError": "8kB"
                 }
               ],
-             "outputHashing": "all",
+              "outputHashing": "all",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "baseHref": "/trotamundos/", 
+              "deployUrl": "/trotamundos/"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "baseHref": "/",
+              "deployUrl": "/"
             }
           },
           "defaultConfiguration": "production"
