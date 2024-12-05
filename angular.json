@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/trotamundos-web",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -31,12 +31,8 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            },
-            "baseHref": "/trotamundos/",  
-            "deployUrl": "/trotamundos/"  
+            "baseHref": "/",  
+            "deployUrl": "/"  
           },
           "configurations": {
             "production": {
@@ -58,8 +54,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/trotamundos/",  
-              "deployUrl": "/trotamundos/"  
+              "baseHref": "/",  
+              "deployUrl": "/"  
             },
             "development": {
               "optimization": false,
