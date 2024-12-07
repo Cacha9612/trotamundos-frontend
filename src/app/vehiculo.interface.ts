@@ -10,5 +10,6 @@ export interface Vehiculo {
     Tipo: string;
     Motor: string;
     Kms: number;
+    Fecha: Date;
   }
   

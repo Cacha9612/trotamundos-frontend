@@ -21,4 +21,10 @@ export class VehiculosService {
     const url = `${this.apiUrl}/generate_and_download`;
     return this.http.post(url, { ID: vehiculoId }, { responseType: 'blob' });
   }
+
+  getVehiculoPorId(vehiculoId:number):Observable<any>
+  {
+    const url = `${this.apiUrl}/api/vehiculo`;
+    return this.http.post(url, { ID: vehiculoId }, { responseType: 'blob' });
+  }
 }
