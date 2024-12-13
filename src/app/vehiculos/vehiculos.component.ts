@@ -86,7 +86,7 @@ export class VehiculosComponent implements OnInit {
             vehiculo.Calaveras_rotas_foto,
             vehiculo.Molduras_completas_foto
           ].filter(foto => foto),
-          image_logo: logotipo
+          logo_base64: logotipo
 
         };
   
