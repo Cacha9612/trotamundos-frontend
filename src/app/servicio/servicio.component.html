@@ -1,0 +1,38 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de checklist -->
+    <div *ngIf="!loading">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id de Checklist</th>
+            <th>Empleado</th>
+            <th>Número de Serie</th>
+            <th>Orden de servicio</th>
+            <th>Fecha</th>
+            <th>Identificador check</th>
+            <th>Descargar documento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let checklist of servicios">
+            <td>{{ checklist.Id}}</td>
+            <td>{{ checklist.Nombre }}</td>
+            <td>{{ checklist.No_serie}}</td>
+            <td>{{ checklist.id_ordendeservicio}}</td>
+            <td>{{ checklist.fecha}}</td>
+            <td>{{ checklist.id_checklist}}</td>
+            
+            <td>
+              <button class="btn btn-primary" (click)="descargarDocumento(checklist.id_checklist)">Descargar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
