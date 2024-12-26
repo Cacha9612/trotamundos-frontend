@@ -18,9 +18,10 @@ export class ServicioService {
 
   // Método para generar y descargar el documento
   descargarDocumento(servicioId: number): Observable<Blob> {
-    const url = `${this.apiUrl}/generate_and_download`;
+    const url = `${this.apiUrl}/generate_and_downloadservice/`;
     return this.http.post(url, { ID: servicioId }, { responseType: 'blob' });
   }
+
 
   getServicioPorId(servicioId:number):Observable<any>
   {
