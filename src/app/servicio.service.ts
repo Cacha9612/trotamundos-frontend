@@ -27,4 +27,10 @@ export class ServicioService {
     const url = `${this.apiUrl}/api/obtenerservicio`;
     return this.http.post(url, { ID: servicioId }, { responseType: 'blob' });
   }
+
+  getChecklist(idChecklist: number): Observable<any> {
+    const url = `${this.apiUrl}/api/obtenerservicio`; // Endpoint correcto
+    return this.http.post(url, { ID: idChecklist });
+  }
+  
 }
