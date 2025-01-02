@@ -1,0 +1,67 @@
+<form [formGroup]="serviceForm" (ngSubmit)="submitForm()" class="service-form">
+    <!-- Fecha -->
+    <div class="form-group">
+      <label for="date">Fecha</label>
+      <input id="date" type="date" formControlName="date" class="form-control" />
+    </div>
+  
+    <!-- Orden de Servicio -->
+    <div class="form-group">
+      <label for="service_order_id">Orden de Servicio</label>
+      <input id="service_order_id" type="text" formControlName="service_order_id" class="form-control" readonly />
+    </div>
+  
+    <!-- Vehículo -->
+    <div class="form-group">
+      <label for="vehicle_id">Vehículo</label>
+      <select id="vehicle_id" formControlName="vehicle_id" class="form-control" (change)="onVehicleChange($event)">
+        <option value="" disabled selected>Seleccione un vehículo</option>
+        <option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.ID">
+          {{ vehiculo.Marca }} {{ vehiculo.Modelo }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Crédito -->
+    <div class="form-group">
+      <label for="credit">Crédito</label>
+      <input id="credit" type="text" formControlName="credit" class="form-control" />
+    </div>
+  
+    <!-- Servicio Inicial -->
+    <div class="form-group">
+      <label for="initial_service">Servicio Inicial</label>
+      <input id="initial_service" type="text" formControlName="initial_service" class="form-control" />
+    </div>
+  
+    <!-- Finalizado -->
+    <div class="form-group">
+      <label for="finalized">Finalizado</label>
+      <input id="finalized" type="number" formControlName="finalized" class="form-control" />
+    </div>
+  
+    <!-- Estado del Servicio -->
+    <div class="form-group">
+      <h3>Estado del Servicio</h3>
+      <label><input type="checkbox" formControlName="reception" /> Recepción</label>
+      <label><input type="checkbox" formControlName="entry" /> Ingreso</label>
+      <label><input type="checkbox" formControlName="repair" /> Reparación</label>
+      <label><input type="checkbox" formControlName="checklist" /> CheckList</label>
+      <label><input type="text" formControlName="technician" placeholder="Número de Técnico" class="form-control" /></label>
+      <label><input type="checkbox" formControlName="quotation" /> Cotización</label>
+      <label><input type="checkbox" formControlName="authorization" /> Autorización</label>
+      <label><input type="checkbox" formControlName="additional" /> Adicionales</label>
+      <label><input type="checkbox" formControlName="washing" /> Lavado</label>
+      <label><input type="checkbox" formControlName="delivery" /> Entregado</label>
+    </div>
+  
+    <!-- Comentarios -->
+    <div class="form-group">
+      <label for="comments">Comentarios</label>
+      <textarea id="comments" formControlName="comments" class="form-control"></textarea>
+    </div>
+  
+    <!-- Botón de Enviar -->
+    <button type="submit" class="btn-submit">Enviar</button>
+  </form>
+  

@@ -54,6 +54,7 @@ export interface Vehiculo {
   TipoMantenimiento?: string; // Usa este nombre
   Fecha: Date; // Correcto (Usar "Fecha" en lugar de "fecha")
   ImagenesBase64?: string[];
+  Activo: number;
 
 
 }

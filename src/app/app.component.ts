@@ -11,6 +11,10 @@ import { RouterModule } from '@angular/router';
     <a routerLink="/vehiculos" routerLinkActive="active">Vehículos</a>
     <a routerLink="/checklist" routerLinkActive="active">Checklist</a>
     <a routerLink="/servicio" routerLinkActive="active">Checklist Servicio</a>
+    <a routerLink="/historicocheck" routerLinkActive="active">Checklist Histórico</a>
+    <a routerLink="/flotillas" routerLinkActive="active">Flotillas</a>
+    <a routerLink="/reporteventas" routerLinkActive="active">Formulario de Ventas</a>
+    <a routerLink="/reporteventasvista" routerLinkActive="active">Reporte de Ventas</a>
   </nav>
     <router-outlet></router-outlet>
   `,

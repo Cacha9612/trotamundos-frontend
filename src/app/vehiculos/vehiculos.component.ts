@@ -13,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 export class VehiculosComponent implements OnInit {
   vehiculos: Vehiculo[] = [];
   loading = false;
+  selectedVehiculo: Vehiculo | null = null;
+  showModal = false;
 
   constructor(
     private vehiculosService: VehiculosService,
@@ -123,10 +125,44 @@ export class VehiculosComponent implements OnInit {
       },
     });
   }
-  
-  
-  
-  
-  
-}
 
+  abrirModal(vehiculo: Vehiculo): void {
+    this.selectedVehiculo = vehiculo;
+    this.showModal = true;
+  }
+  
+  cerrarModal(): void {
+    this.showModal = false;
+    this.selectedVehiculo = null;
+  }
+  
+  actualizarEstadoVehiculo(estado: boolean): void {
+    if (!this.selectedVehiculo) return;
+
+    const vehiculoId = this.selectedVehiculo.ID;
+    const estadoActivo = estado ? 1 : 0;  // Convertimos el booleano a 1 o 0
+
+    this.vehiculosService.updateVehiculo(vehiculoId, estadoActivo).subscribe({
+      next: (response) => {
+        console.log('Estado del vehículo actualizado', response);
+
+        if(estadoActivo == 1)
+        {
+          alert('Se autorizó el vehículo');
+        }
+        else{
+          alert('Vehículo no autorizado');
+        }
+        
+         this.cargarVehiculos();
+         
+
+        // Aquí puedes hacer lo que necesites, como recargar la lista de vehículos o mostrar un mensaje
+      },
+      error: (error) => {
+        console.error('Error al actualizar el estado del vehículo', error);
+      }
+    });
+  }
+  
+  }

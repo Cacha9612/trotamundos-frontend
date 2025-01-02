@@ -275,4 +275,99 @@ footer {
   .overlay {
       font-size: 1.5em;
   }
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .modal button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Botones individuales */
+  .action-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ffa500; /* Color naranja más limpio */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  
+  .action-buttons button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Iconos dentro de los botones */
+  .action-buttons button i {
+    font-size: 1.2em;
+    color: #fff;
+    pointer-events: none;
+  }
+  
+  /* Botón de aceptación */
+  .action-buttons .btn-accept {
+    background-color: #28a745; /* Verde para palomita */
+  }
+  
+  .action-buttons .btn-accept i {
+    color: #ffffff; /* Icono blanco */
+  }
+  
+  /* Botón de rechazo */
+  .action-buttons .btn-reject {
+    background-color: #dc3545; /* Rojo para cruz */
+  }
+  
+  .action-buttons .btn-reject i {
+    color: #ffffff; /* Icono blanco */
+  }
+  
+  /* Efecto activo */
+  .action-buttons button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  
+  
+  
 }

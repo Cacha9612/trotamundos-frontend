@@ -1,0 +1,44 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de checklist -->
+    <div *ngIf="!loading">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id de Flotilla</th>
+            <th>Nombre de la flotilla</th>
+            <th>Encargado</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>No de serie</th>
+            <th>Placa</th>
+            <th>Tipo</th>
+            <th>Motor</th>
+            <th>Kms</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flotilla of Flotilla">
+            <td>{{ flotilla.IdFlotilla}}</td>
+            <td>{{ flotilla.NamesFlotillas }}</td>
+            <td>{{ flotilla.Encargado}}</td>
+            <td>{{ flotilla.Marca}}</td>
+            <td>{{ flotilla.Modelo}}</td>
+            <td>{{ flotilla.Color}}</td>
+            <td>{{ flotilla.No_serie }}</td>
+            <td>{{ flotilla.Placa}}</td>
+            <td>{{ flotilla.Tipo}}</td>
+            <td>{{ flotilla.Motor}}</td>
+            <td>{{ flotilla.Kms}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

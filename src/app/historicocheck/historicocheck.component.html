@@ -1,0 +1,32 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de checklist -->
+    <div *ngIf="!loading">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id de Checklist</th>
+            <th>Vehículo</th>
+            <th>Empleado</th>
+            <th>Estado</th>
+            <th>Tiempo Transcurrido</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let historico of historicochecks">
+            <td>{{ historico.IdChecklist}}</td>
+            <td>{{ historico.IdVehiculo }}</td>
+            <td>{{ historico.IdEmpleado}}</td>
+            <td>{{ historico.Estado}}</td>
+            <td>{{ historico.TiempoTranscurrido}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

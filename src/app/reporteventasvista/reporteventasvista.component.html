@@ -1,0 +1,53 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de checklist -->
+    <div *ngIf="!loading" class="table-responsive">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>FECHA</th>
+            <th>ORDEN DE SERVICIO</th>
+            <th>VEHÍCULO</th>
+            <th>CREDITO</th>
+            <th>SERVICIO INICIAL</th>
+            <th>FINALIZADO</th>
+            <th>RECEPCIÓN</th>
+            <th>INGRESO A RAMPA</th>
+            <th>CHECKLIST</th>
+            <th>N TÉCNICO</th>
+            <th>COTIZACIÓN</th>
+            <th>AUTORIZACIÓN</th>
+            <th>ADICIONALES</th>
+            <th>LAVADO</th>
+            <th>ENTREGADO</th>
+            <th>COMENTARIOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reporte of ReporteVentasVista">
+            <td>{{ reporte.Date }}</td>
+            <td>{{ reporte.IdOrdenServicio }}</td>
+            <td>{{ reporte.Marca }}</td>
+            <td>{{ reporte.Credit }}</td>
+            <td>{{ reporte.InitialService }}</td>
+            <td>{{ reporte.Finalized }}</td>
+            <td>{{ reporte.Reception }}</td>
+            <td>{{ reporte.Entry }}</td>
+            <td>{{ reporte.Checklist }}</td>
+            <td>{{ reporte.Technician }}</td>
+            <td>{{ reporte.Quotation }}</td>
+            <td>{{ reporte.Authorizacion }}</td>
+            <td>{{ reporte.Additional }}</td>
+            <td>{{ reporte.Washing }}</td>
+            <td>{{ reporte.Delivery }}</td>
+            <td>{{ reporte.Comments }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -19,7 +19,9 @@
           <th>Tipo</th>
           <th>Motor</th>
           <th>Kms</th>
-          <th>Acción</th>
+          <th>Descargar</th>
+          <th>Estado</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -37,8 +39,41 @@
           <td>
             <button class="btn btn-primary" (click)="descargarDocumento(vehiculo.ID)">Descargar</button>
           </td>
+          <td [ngClass]="vehiculo.Activo === 1 ? 'text-success' : 'text-danger'">
+            {{ vehiculo.Activo === 1 ? 'Activo' : 'Inactivo' }}
+          </td>         
+          <td class="action-buttons">
+            <button class="btn-accept" (click)="abrirModal(vehiculo)" title="Confirmar">
+              <i class="fa fa-check">✔</i>
+            </button>
+            <button class="btn-reject" (click)="abrirModal(vehiculo)" title="Denegar">
+              <i class="fa fa-times">❌</i>
+            </button>
+          </td>
+          
         </tr>
       </tbody>
     </table>
+  </div>
+
+   <!-- Modal de confirmación -->
+  <div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal">
+      <h2>Confirmar acción</h2>
+      <p>
+        ¿Estás seguro de que deseas cambiar el estado de
+        <strong>{{ selectedVehiculo?.Marca }} {{ selectedVehiculo?.Modelo }}</strong>
+        ?
+      </p>
+      <div class="modal-actions">
+        <button class="btn btn-success" (click)="actualizarEstadoVehiculo(true)">
+          Activar
+        </button>
+        <button class="btn btn-danger" (click)="actualizarEstadoVehiculo(false)">
+          Desactivar
+        </button>
+        <button class="btn btn-secondary" (click)="cerrarModal()">Cancelar</button>
+      </div>
+    </div>
   </div>
 </div>
