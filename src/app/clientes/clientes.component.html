@@ -1,0 +1,85 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de vehículos -->
+    <div *ngIf="!loading">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id Cliente</th>
+          
+            <th>Nombre</th>
+            <th>Calle</th>
+            <th>Colonia</th>
+            <th>Ciudad</th>
+            <th>Estado</th>
+            <th>Tel</th>
+            <th>Cel</th>
+            <th>Email</th>
+            <th>RFC</th>
+            <th>No_int</th>
+            <th>Facturar a</th>
+            <th>Id Usuario Empleado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.idCliente }}</td>
+           
+            <td>{{ cliente.Nombre }}</td>
+            <td>{{ cliente.Calle }}</td>
+            <td>{{ cliente.Colonia }}</td>
+            <td>{{ cliente.Ciudad }}</td>
+            <td>{{ cliente.Estado }}</td>
+            <td>{{ cliente.Tel }}</td>
+            <td>{{ cliente.Cel }}</td>
+            <td>{{ cliente.Email }}</td>
+            <td>{{ cliente.RFC }}</td>
+            <td>{{ cliente.No_int }}</td>
+            <td>{{ cliente.Facturar_a }}</td>
+            <td>{{ cliente.IdUsuarioEmpleado }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="descargarDocumento(cliente.idCliente)">Descargar</button>
+            </td>
+            <td [ngClass]="cliente.Activo === 1 ? 'text-success' : 'text-danger'">
+              {{ cliente.Activo === 1 ? 'Activo' : 'Inactivo' }}
+            </td>         
+            <td class="action-buttons">
+              <button class="btn-accept" (click)="abrirModal(cliente)" title="Confirmar">
+                <i class="fa fa-check">✔</i>
+              </button>
+              <button class="btn-reject" (click)="abrirModal(cliente)" title="Denegar">
+                <i class="fa fa-times">❌</i>
+              </button>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+     <!-- Modal de confirmación -->
+    <div class="modal-backdrop" *ngIf="showModal">
+      <div class="modal">
+        <h2>Confirmar acción</h2>
+        <p>
+          ¿Estás seguro de que deseas cambiar el estado de
+          <strong>{{ selectedCliente?.Nombre }} {{ selectedCliente?.Email }}</strong>
+          ?
+        </p>
+        <div class="modal-actions">
+          <button class="btn btn-success" (click)="actualizarEstadoCliente(true)">
+            Activar
+          </button>
+          <button class="btn btn-danger" (click)="actualizarEstadoCliente(false)">
+            Desactivar
+          </button>
+          <button class="btn btn-secondary" (click)="cerrarModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
