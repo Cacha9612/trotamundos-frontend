@@ -40,7 +40,7 @@ export class ClientesComponent implements OnInit {
     );
   }
   descargarDocumento(idCliente: number): void {
-    const urlDocumento = `http://3.140.158.80:5080/generate_and_download_orden/${idCliente}`; // Endpoint para generar el documento
+    const urlDocumento = `http://3.140.158.80:5080/generate_and_download_orden?clienteId=${idCliente}`; // Endpoint para generar el documento
     const headers = { 'Content-Type': 'application/json' };
 
     // Realizar la solicitud GET para generar y descargar el documento
