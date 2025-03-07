@@ -7,11 +7,13 @@ import { HistoricoCheckComponent } from './historicocheck/historicocheck.compone
 import { FlotillasComponent } from './flotillas/flotillas.component';
 import { ReporteventasComponent } from './reporteventas/reporteventas.component';
 import { ReporteVentasVistaComponent } from './reporteventasvista/reporteventasvista.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'vehiculos', component: VehiculosComponent },
+  { path: 'clientes', component: ClientesComponent },
   { path: 'checklist', component: ChecklistComponent },
   { path: 'servicio', component: ServicioComponent },
   { path: 'historicocheck', component: HistoricoCheckComponent },

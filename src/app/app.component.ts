@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
    <nav>
     <a routerLink="/home" routerLinkActive="active">Home</a>
     <a routerLink="/vehiculos" routerLinkActive="active">Vehículos</a>
+    <a routerLink="/clientes" routerLinkActive="active">Clientes</a>
     <a routerLink="/checklist" routerLinkActive="active">Checklist</a>
     <a routerLink="/servicio" routerLinkActive="active">Checklist Servicio</a>
     <a routerLink="/historicocheck" routerLinkActive="active">Checklist Histórico</a>
