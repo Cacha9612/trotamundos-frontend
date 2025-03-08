@@ -9,6 +9,7 @@
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
+            <th>Id Orden de Servicio</th>
             <th>Id Cliente</th>
           
             <th>Nombre</th>
@@ -23,7 +24,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let orden of orders">
-            <td>{{ orden.idCliente }}</td>
+            <td>{{ orden.idOrden }}</td>
+            <td>{{ orden.IdCliente }}</td>
            
             <td>{{ orden.Nombre }}</td>
             <td>{{ orden.No_Serie }}</td>
@@ -32,7 +34,7 @@
             <td>{{ orden.Placa }}</td>
          
             <td>
-              <button class="btn btn-primary" (click)="descargarDocumento(orden.idCliente)">Descargar</button>
+              <button class="btn btn-primary" (click)="descargarDocumento(orden.idOrden)">Descargar</button>
             </td>
        
             

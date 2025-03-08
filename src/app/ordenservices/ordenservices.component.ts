@@ -77,7 +77,7 @@ export class OrdenservicesComponent implements OnInit {
   actualizarEstadoCliente(estado: boolean): void {
     if (!this.selectedOrden) return;
 
-    const clienteId = this.selectedOrden.idCliente;
+    const clienteId = this.selectedOrden.IdCliente;
     const estadoActivo = estado ? 1 : 0;  // Convertimos el booleano a 1 o 0
 
     this.ordersService.updateOrden(clienteId, estadoActivo).subscribe({

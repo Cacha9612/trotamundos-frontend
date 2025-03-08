@@ -1,5 +1,6 @@
 export interface Orden {
-  idCliente:	number;
+  idOrden: number;
+  IdCliente:	number;
   Nombre: string;
   Marca: string; 
   Modelo: string;
