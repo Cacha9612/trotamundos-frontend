@@ -1,0 +1,65 @@
+<div class="container">
+    <!-- Cargando... -->
+    <div *ngIf="loading" class="overlay">
+      <i class="fa fa-spinner fa-spin"></i> Cargando...
+    </div>
+  
+    <!-- Tabla de vehículos -->
+    <div *ngIf="!loading">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id Cliente</th>
+          
+            <th>Nombre</th>
+            <th>No Serie</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Placa</th>
+            <th>Descargar orden de servicio</th>
+    
+   
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orden of orders">
+            <td>{{ orden.idCliente }}</td>
+           
+            <td>{{ orden.Nombre }}</td>
+            <td>{{ orden.No_Serie }}</td>
+            <td>{{ orden.Modelo }}</td>
+            <td>{{ orden.Marca }}</td>
+            <td>{{ orden.Placa }}</td>
+         
+            <td>
+              <button class="btn btn-primary" (click)="descargarDocumento(orden.idCliente)">Descargar</button>
+            </td>
+       
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+     <!-- Modal de confirmación -->
+    <div class="modal-backdrop" *ngIf="showModal">
+      <div class="modal">
+        <h2>Confirmar acción</h2>
+        <p>
+          ¿Estás seguro de que deseas cambiar el estado de
+          <strong>{{ selectedOrden?.Nombre }} {{ selectedOrden?.No_Serie }}</strong>
+          ?
+        </p>
+        <div class="modal-actions">
+          <button class="btn btn-success" (click)="actualizarEstadoCliente(true)">
+            Activar
+          </button>
+          <button class="btn btn-danger" (click)="actualizarEstadoCliente(false)">
+            Desactivar
+          </button>
+          <button class="btn btn-secondary" (click)="cerrarModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
