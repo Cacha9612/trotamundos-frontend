@@ -23,9 +23,6 @@
             <th>No_int</th>
             <th>Facturar a</th>
             <th>Id Usuario Empleado</th>
-            <th>Descargar orden de servicio</th>
-            <th>Estado</th>
-            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -44,20 +41,7 @@
             <td>{{ cliente.No_int }}</td>
             <td>{{ cliente.Facturar_a }}</td>
             <td>{{ cliente.IdUsuarioEmpleado }}</td>
-            <td>
-              <button class="btn btn-primary" (click)="descargarDocumento(cliente.idCliente)">Descargar</button>
-            </td>
-            <td [ngClass]="cliente.Activo === 1 ? 'text-success' : 'text-danger'">
-              {{ cliente.Activo === 1 ? 'Activo' : 'Inactivo' }}
-            </td>         
-            <td class="action-buttons">
-              <button class="btn-accept" (click)="abrirModal(cliente)" title="Confirmar">
-                <i class="fa fa-check">✔</i>
-              </button>
-              <button class="btn-reject" (click)="abrirModal(cliente)" title="Denegar">
-                <i class="fa fa-times">❌</i>
-              </button>
-            </td>
+          
             
           </tr>
         </tbody>
