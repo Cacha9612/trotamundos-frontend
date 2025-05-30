@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+    container_name: trotamundos_frontend
+    ports:
+      - "4200:80"
+    networks:
+      - trotamundos
+
+networks:
+  trotamundos:
+    external: true
+    

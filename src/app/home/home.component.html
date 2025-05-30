@@ -1,26 +1,30 @@
-<div class="home-container">
-    <div class="hero">
-      <h1>Bienvenido a Trotamundos</h1>
-      <p>Explora vehículos, descubre nuevas rutas y más.</p>
-      <button (click)="navigateToVehiculos()">Ver Vehículos</button>
-    </div>
-  
-    <div class="features">
-      <div class="feature">
-        <img src="assets/images/explore.svg" alt="Explorar" />
-        <h2>Explora</h2>
-        <p>Descubre nuevos destinos y planifica tu viaje perfecto.</p>
-      </div>
-      <div class="feature">
-        <img src="assets/images/vehicles.svg" alt="Vehículos" />
-        <h2>Vehículos</h2>
-        <p>Gestiona tu flota de vehículos de manera eficiente.</p>
-      </div>
-      <div class="feature">
-        <img src="assets/images/support.svg" alt="Soporte" />
-        <h2>Soporte</h2>
-        <p>Contamos con el mejor equipo para ayudarte en tu aventura.</p>
-      </div>
-    </div>
+<div class="home-container bg-gray-100 min-h-screen flex flex-col items-center text-center p-8">
+  <div class="hero bg-white text-gray-900 py-10 px-8 rounded-lg shadow-lg w-full max-w-2xl flex flex-col items-center border border-gray-300">
+    <img src="assets/images/logo_izquierdo.jpg" alt="Logo Trotamundos" class="w-64 mb-6" />
+    <h1 class="text-3xl font-bold mb-4 text-black">TROTAMUNDOS<span class="text-red-600">S</span></h1>
+    <p class="text-lg mb-6 text-gray-700">Servicio Automotriz - Gestión de Refacciones y Vehículos</p>
+    <button 
+      class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-red-500 transition"
+      (click)="navigateToVehiculos()">
+      Ver Vehículos
+    </button>
   </div>
   
+  <div class="features grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 w-full max-w-5xl">
+    <div class="feature bg-white p-6 rounded-lg shadow-md flex flex-col items-center border border-gray-300">
+      <img src="assets/images/explore.svg" alt="Explorar" class="w-20 mb-4" />
+      <h2 class="text-xl font-semibold mb-2 text-blue-900">Explora</h2>
+      <p class="text-gray-700 text-sm text-center">Consulta información detallada de vehículos y refacciones.</p>
+    </div>
+    <div class="feature bg-white p-6 rounded-lg shadow-md flex flex-col items-center border border-gray-300">
+      <img src="assets/images/vehicles.svg" alt="Vehículos" class="w-20 mb-4" />
+      <h2 class="text-xl font-semibold mb-2 text-blue-900">Vehículos</h2>
+      <p class="text-gray-700 text-sm text-center">Administra y realiza seguimiento de los vehículos registrados.</p>
+    </div>
+    <div class="feature bg-white p-6 rounded-lg shadow-md flex flex-col items-center border border-gray-300">
+      <img src="assets/images/support.svg" alt="Soporte" class="w-20 mb-4" />
+      <h2 class="text-xl font-semibold mb-2 text-blue-900">Soporte</h2>
+      <p class="text-gray-700 text-sm text-center">Obtén ayuda rápida y eficiente para la gestión del sistema.</p>
+    </div>
+  </div>
+</div>
